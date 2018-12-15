@@ -1,0 +1,111 @@
+\documentclass{mwart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1, nomathsymbols]{polski}
+\usepackage[boldsans]{concmath}
+\usepackage{concrete}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage[paperheight=297mm, paperwidth=210mm, top=2.5cm, bottom=2.5cm, left=4.4cm, right=4.4cm]{geometry}
+
+\declaretheoremstyle
+[
+  spaceabove=\topsep,
+  spacebelow=\topsep,
+  headfont=\bfseries,
+  notefont=\bfseries,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+]
+{theorem}
+
+\declaretheoremstyle
+[
+  spaceabove=\topsep,
+  spacebelow=\topsep,
+  headfont=\itshape \bfseries,
+  notefont=\normalfont,
+  notebraces={(}{)},
+  bodyfont=\normalfont,
+  qed=\ensuremath{\blacksquare},
+]
+{proof}
+\let\proof\relax
+
+\declaretheorem[style=theorem, name=Twierdzenie, numberwithin=subsection]{theorem}
+\declaretheorem[style=theorem, name=Lemat,       numberlike=theorem]{lemma}
+\declaretheorem[style=theorem, name=Definicja,   numberlike=theorem]{definition}
+\declaretheorem[style=theorem, name=Wniosek,     numberlike=theorem]{conclusion}
+\declaretheorem[style=theorem, name=Przykład,    numberlike=theorem]{example}
+\declaretheorem[style=proof,   name=Dowód,       numbered=no]{proof}
+
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\N}{\mathbb{N}}
+\newcommand*{\Q}{\mathbb{Q}}
+\newcommand*{\Z}{\mathbb{Z}}
+\newcommand*{\C}{\mathbb{C}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\p{(}{)}
+
+\pagestyle{myuheadings}
+
+\title{
+  \Huge {\bfseries Równania różniczkowe zwyczajne} \\
+  \Large {\scshape Opracowanie zagadnień na egzamin}
+}
+\author{{\scshape KJG}}
+\date{{\scshape Wersja z 15 grudnia 2018 r.}}
+
+\begin{document}
+	
+  \maketitle
+  \newpage
+  
+  \tableofcontents
+  \newpage
+  
+  \section{Twierdzenia}
+    \subsection{Ciągła zależność od parametru}
+    \subsection{Różniczkowalna zależność od parametrów}
+    \subsection{Rozwiązania przez szeregi potęgowe wokół punktu regularnego}
+    \subsection{Twierdzenie spektralne dla funkcji analitycznych}
+    \subsection{Twierdzenie o asymptotycznym zachowaniu $\mathbf{\left\lVert e^{At} \right\rVert}$}
+    \subsection{Twierdzenie o minimach funkcji Lapunowa i stabilności}
+  
+  \section{Zagadnienia}
+    \subsection{Istnienie i jednoznaczność rozwiązań, rozwiązania wysycone}
+      \input{subfiles/21.tex}
+    \subsection{Metoda Frobeniusa}
+    \subsection{Rozwiązania układów liniowych jednorodnych}
+    \subsection{Rozwiązywanie równań liniowych niejednorodnych}
+    \subsection{Hiperboliczność i stabilność punktów równowagi}
+    \subsection{Zagadnienia brzegowe}
+  
+  \section{Przykłady}
+    \subsection{Rozwiązywanie równań metodą szeregów potęgowych}
+    \subsection{Równania na wariację}
+    \subsection{Potoki -- policzenie i zastosowanie własności w konkretnych sytuacjach}
+    \subsection{Wzory Liouville'a i Abela}
+    \subsection{Zastosowania twierdzenia spektralnego, macierze spektralne}
+    \subsection{Całki pierwsze, funkcje Lapunowa -- zastosowanie do badania stabilności}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
