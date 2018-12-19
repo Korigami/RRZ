@@ -1,4 +1,4 @@
-\documentclass{mwart}
+\documentclass{mwrep}
 
 \usepackage[utf8]{inputenc}
 \usepackage[nomathsymbols]{polski}
@@ -17,8 +17,8 @@
 \declaretheoremstyle[
   spaceabove = \topsep,
   spacebelow = \topsep,
-  headfont   = \bfseries,
-  notefont   = \bfseries,
+  headfont   = \bfseries \scshape,
+  notefont   = \normalfont,
   notebraces = {(}{)},
   bodyfont   = \normalfont,
 ]{mystyle}
@@ -28,7 +28,7 @@
 \declaretheorem[
   style  = mystyle,
   name   = Twierdzenie,
-  parent = subsection
+  parent = section
 ]{theorem}
 \declaretheorem[
   style   = mystyle,
@@ -82,35 +82,33 @@
 \begin{document}
 	
   \maketitle
-  \newpage
   
   \tableofcontents
-  \newpage
   
-  \section{Twierdzenia}
-%    \subsection{Ciągła zależność od parametru}
-%    \subsection{Różniczkowalna zależność od parametru}
-%    \subsection{Rozwiązania przez szeregi potęgowe wokół punktu regularnego}
-%    \subsection{Twierdzenie spektralne dla funkcji analitycznych}
-%    \subsection{Twierdzenie o asymptotycznym zachowaniu $\mathbf{ \norm*{e^{At}} }$}
-%    \subsection{Twierdzenie o minimach funkcji Lapunowa i stabilności}
+  \chapter{Twierdzenia}
+%    \section{Ciągła zależność od parametru}
+%    \section{Różniczkowalna zależność od parametru}
+%    \section{Rozwiązania przez szeregi potęgowe wokół punktu regularnego}
+%    \section{Twierdzenie spektralne dla funkcji analitycznych}
+%    \section{Twierdzenie o asymptotycznym zachowaniu $\mathbf{ \norm*{e^{At}} }$}
+%    \section{Twierdzenie o minimach funkcji Lapunowa i stabilności}
   
-  \section{Zagadnienia}
-    \subsection{Istnienie i jednoznaczność rozwiązań, rozwiązania wysycone}
+  \chapter{Zagadnienia}
+    \section{Istnienie i jednoznaczność rozwiązań, rozwiązania wysycone}
       \input{subfiles/2-1.tex}
-%    \subsection{Metoda Frobeniusa}
-%    \subsection{Rozwiązania układów liniowych jednorodnych}
-%    \subsection{Rozwiązywanie równań liniowych niejednorodnych}
-%    \subsection{Hiperboliczność i stabilność punktów równowagi}
-%    \subsection{Zagadnienia brzegowe}
+%    \section{Metoda Frobeniusa}
+%    \section{Rozwiązania układów liniowych jednorodnych}
+%    \section{Rozwiązywanie równań liniowych niejednorodnych}
+%    \section{Hiperboliczność i stabilność punktów równowagi}
+%    \section{Zagadnienia brzegowe}
   
-  \section{Przykłady}
-%    \subsection{Rozwiązywanie równań metodą szeregów potęgowych}
-%    \subsection{Równania na wariację}
-%    \subsection{Potoki -- policzenie i zastosowanie własności w konkretnych sytuacjach}
-%    \subsection{Wzory Liouville'a i Abela}
-%    \subsection{Zastosowania twierdzenia spektralnego, macierze spektralne}
-%    \subsection{Całki pierwsze, funkcje Lapunowa -- zastosowanie do badania stabilności}
+  \chapter{Przykłady}
+%    \section{Rozwiązywanie równań metodą szeregów potęgowych}
+%    \section{Równania na wariację}
+%    \section{Potoki -- policzenie i zastosowanie własności w konkretnych sytuacjach}
+%    \section{Wzory Liouville'a i Abela}
+%    \section{Zastosowania twierdzenia spektralnego, macierze spektralne}
+%    \section{Całki pierwsze, funkcje Lapunowa -- zastosowanie do badania stabilności}
 
 \end{document}
 
