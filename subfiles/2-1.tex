@@ -10,3 +10,26 @@
   Wówczas dla $\alpha = \min(a, b/M)$ istnieje rozwiązanie $y(t)$ określone na
   przedziale $[t_0 - \alpha, t_0 + \alpha]$, spełniające warunek początkowy $y(t_0) = y_0$.
 \end{theorem}
+
+\begin{theorem}[Picard — Lindelöf]
+  Niech $y' = f(y,t)$, gdzie $y(t_0) = y_0$ oraz
+  \[
+    f \colon H = \overline{B} (y_0, b) \times [t_0 - a, t_0 + a] \longrightarrow \R^m.
+  \]
+  Załóżmy, że funkcja $f$ jest ciągła oraz lipszycowska ze względu na $y$, to znaczy
+  \[
+    \exists L \ \forall (y_1,t), (y_2,t) \in H \quad
+    \norm[\big]{f(y_1,t) - f(y_2,t)} \leq L \cdot \norm{y_1 - y_2}.
+  \]
+  Oznaczmy ponadto
+  \[
+    M = \sup \big\{ \norm[\big]{f(y,t)} : (y, t) \in H \big\}.
+  \]
+  Wówczas dla dowolnego $\alpha < \min(a, b/M, 1/L)$ istnieje dokładnie jedno rozwiązanie
+  zagadnienia Cauchy'ego z warunkiem początkowym $y(t_0) = y_0$ określone na przedziale
+  $[t_0 - \alpha, t_0 + \alpha]$.
+\end{theorem}
+
+\begin{proof}
+  Jako ćwiczenie.
+\end{proof}

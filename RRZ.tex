@@ -2,8 +2,6 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1, nomathsymbols]{polski}
-\usepackage[boldsans]{concmath}
-\usepackage{concrete}
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage{mathtools}
 \usepackage{thmtools}
@@ -19,53 +17,53 @@
 \declaretheoremstyle[
   spaceabove = \topsep,
   spacebelow = \topsep,
-  headfont   = \bfseries,
-  notefont   = \bfseries,
+  headfont   = \bfseries \scshape,
+  notefont   = \bfseries \scshape,
   notebraces = {(}{)},
   bodyfont   = \normalfont,
-]{theorem_style}
+]{mystyle}
 
 \declaretheoremstyle[
   spaceabove = \topsep,
   spacebelow = \topsep,
-  headfont   = \itshape \bfseries,
-  notefont   = \normalfont,
+  headfont   = \bfseries \scshape,
+  notefont   = \bfseries \scshape,
   notebraces = {(}{)},
-  bodyfont   = \normalfont,
-  qed        = \ensuremath{\blacksquare},
-]{proof_style}
+  bodyfont   = \normalfont
+]{mystyle}
 
 \let\proof\relax
 
 \declaretheorem[
-  style  = theorem_style,
+  style  = mystyle,
   name   = Twierdzenie,
   parent = subsection
 ]{theorem}
 \declaretheorem[
-  style   = theorem_style,
+  style   = mystyle,
   name    = Lemat,
   sibling = theorem
 ]{lemma}
 \declaretheorem[
-  style   = theorem_style,
+  style   = mystyle,
   name    = Definicja,
   sibling = theorem
 ]{definition}
 \declaretheorem[
-  style   = theorem_style,
+  style   = mystyle,
   name    = Wniosek,
   sibling = theorem
 ]{conclusion}
 \declaretheorem[
-  style   = theorem_style,
+  style   = mystyle,
   name    = Przykład,
   sibling = theorem
 ]{example}
 \declaretheorem[
-  style    = proof_style,
+  style    = mystyle,
   name     = Dowód,
-  numbered = no
+  numbered = no,
+  qed      = \ensuremath{\blacksquare}
 ]{proof}
 
 \newcommand*{\R}{\mathbb{R}}
@@ -78,10 +76,13 @@
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
 \DeclarePairedDelimiter\p{(}{)}
 
-\pagestyle{myuheadings}
+\pagestyle{uheadings}
+\makeatletter
+\renewcommand\heading@font\scshape
+\makeatother
 
 \title{
-  \Huge \textbf{Równania różniczkowe zwyczajne} \\
+  \huge \textbf{Równania różniczkowe zwyczajne} \\
   \Large Opracowanie zagadnień na egzamin
 }
 \author{ KJG }
@@ -96,29 +97,29 @@
   \newpage
   
   \section{Twierdzenia}
-    \subsection{Ciągła zależność od parametru}
-    \subsection{Różniczkowalna zależność od parametru}
-    \subsection{Rozwiązania przez szeregi potęgowe wokół punktu regularnego}
-    \subsection{Twierdzenie spektralne dla funkcji analitycznych}
-    \subsection{Twierdzenie o asymptotycznym zachowaniu $\mathbf{ \norm*{e^{At}} }$}
-    \subsection{Twierdzenie o minimach funkcji Lapunowa i stabilności}
+%    \subsection{Ciągła zależność od parametru}
+%    \subsection{Różniczkowalna zależność od parametru}
+%    \subsection{Rozwiązania przez szeregi potęgowe wokół punktu regularnego}
+%    \subsection{Twierdzenie spektralne dla funkcji analitycznych}
+%    \subsection{Twierdzenie o asymptotycznym zachowaniu $\mathbf{ \norm*{e^{At}} }$}
+%    \subsection{Twierdzenie o minimach funkcji Lapunowa i stabilności}
   
   \section{Zagadnienia}
     \subsection{Istnienie i jednoznaczność rozwiązań, rozwiązania wysycone}
       \input{subfiles/2-1.tex}
-    \subsection{Metoda Frobeniusa}
-    \subsection{Rozwiązania układów liniowych jednorodnych}
-    \subsection{Rozwiązywanie równań liniowych niejednorodnych}
-    \subsection{Hiperboliczność i stabilność punktów równowagi}
-    \subsection{Zagadnienia brzegowe}
+%    \subsection{Metoda Frobeniusa}
+%    \subsection{Rozwiązania układów liniowych jednorodnych}
+%    \subsection{Rozwiązywanie równań liniowych niejednorodnych}
+%    \subsection{Hiperboliczność i stabilność punktów równowagi}
+%    \subsection{Zagadnienia brzegowe}
   
   \section{Przykłady}
-    \subsection{Rozwiązywanie równań metodą szeregów potęgowych}
-    \subsection{Równania na wariację}
-    \subsection{Potoki -- policzenie i zastosowanie własności w konkretnych sytuacjach}
-    \subsection{Wzory Liouville'a i Abela}
-    \subsection{Zastosowania twierdzenia spektralnego, macierze spektralne}
-    \subsection{Całki pierwsze, funkcje Lapunowa -- zastosowanie do badania stabilności}
+%    \subsection{Rozwiązywanie równań metodą szeregów potęgowych}
+%    \subsection{Równania na wariację}
+%    \subsection{Potoki -- policzenie i zastosowanie własności w konkretnych sytuacjach}
+%    \subsection{Wzory Liouville'a i Abela}
+%    \subsection{Zastosowania twierdzenia spektralnego, macierze spektralne}
+%    \subsection{Całki pierwsze, funkcje Lapunowa -- zastosowanie do badania stabilności}
 
 \end{document}
 
