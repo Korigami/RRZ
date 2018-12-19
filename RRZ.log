@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.29)  15 DEC 2018 22:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.29)  19 DEC 2018 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,63 +697,63 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package thmtools Info: Key `qed' (with value `\ensuremath {\blacksquare }')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
-(thmtools)             that uses `style=proof' on input line 36.
+(thmtools)             that uses `style=proof_style' on input line 36.
 \c@theorem=\count107
  (./RRZ.aux)
 \openout1 = `RRZ.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Try loading font information for T1+ccr on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Try loading font information for T1+ccr on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ccfonts/t1ccr.fd
 File: t1ccr.fd 1999/11/22 v1.0a (WaS)
 )
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 90.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 65.
+(Font)              `operators' in the math version `normal' on input line 90.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/ccr/m/n --> T1/ccr/m/n on input line 65.
+(Font)                  OT1/ccr/m/n --> T1/ccr/m/n on input line 90.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 65.
+(Font)              `operators' in the math version `bold' on input line 90.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ccr/bx/n --> T1/ccr/m/n on input line 65.
+(Font)                  OT1/ccr/bx/n --> T1/ccr/m/n on input line 90.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  T1/ccr/m/n --> T1/ccr/sbc/n on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 65.
+(Font)                  T1/ccr/m/n --> T1/ccr/sbc/n on input line 90.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/ccr/bx/n --> T1/ccr/sbc/n on input line 65.
+(Font)                  OT1/ccr/bx/n --> T1/ccr/sbc/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/ccr/bx/n --> T1/ccr/sbc/n on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 65.
+(Font)                  OT1/ccr/bx/n --> T1/ccr/sbc/n on input line 90.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 65.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 65.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 90.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ccr/m/it --> T1/ccr/m/it on input line 65.
+(Font)                  OT1/ccr/m/it --> T1/ccr/m/it on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ccr/m/it --> T1/ccr/m/it on input line 65.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 65.
+(Font)                  OT1/ccr/m/it --> T1/ccr/m/it on input line 90.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 65.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 65.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/sbc/n on input line 65.
+(Font)                  T1/cmss/m/n --> T1/cmss/sbc/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/ccr/m/it --> T1/ccr/sbc/it on input line 65.
+(Font)                  T1/ccr/m/it --> T1/ccr/sbc/it on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -856,62 +856,62 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+eur on input line 67.
+LaTeX Font Info:    Try loading font information for U+eur on input line 92.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueur.fd
 File: ueur.fd 2013/01/14 v3.01 Euler Roman
 )
-LaTeX Font Info:    Try loading font information for OMS+ccsy on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+ccsy on input line 92.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/concmath/omsccsy.fd
 File: omsccsy.fd 1999/03/10 v2.0b LaTeX font defs for Concrete math fonts
 )
-LaTeX Font Info:    Try loading font information for OMX+ccex on input line 67.
+LaTeX Font Info:    Try loading font information for OMX+ccex on input line 92.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/concmath/omxccex.fd
 File: omxccex.fd 1999/03/10 v2.0b LaTeX font defs for Concrete math fonts
 )
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <10> on input line 67.
+(Font)              <10> on input line 92.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <7> on input line 67.
+(Font)              <7> on input line 92.
 LaTeX Font Info:    External font `xccex10' loaded for size
-(Font)              <5> on input line 67.
-LaTeX Font Info:    Try loading font information for U+euf on input line 67.
+(Font)              <5> on input line 92.
+LaTeX Font Info:    Try loading font information for U+euf on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-LaTeX Font Info:    Try loading font information for U+eus on input line 67.
+LaTeX Font Info:    Try loading font information for U+eus on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-LaTeX Font Info:    Try loading font information for U+euex on input line 67.
+LaTeX Font Info:    Try loading font information for U+euex on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuex.fd
 File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 67.
+LaTeX Font Info:    Try loading font information for U+msa on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 67.
+LaTeX Font Info:    Try loading font information for U+msb on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/ccr/sbc/n' in size 24.88 not available
-(Font)              external font `ecssdc10' used on input line 67.
+(Font)              external font `ecssdc10' used on input line 92.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/ccr/sbc/n' in size 10 not available
-(Font)              external font `ecssdc10' used on input line 70.
+(Font)              external font `ecssdc10' used on input line 95.
 LaTeX Font Info:    Font shape `T1/ccr/sbc/n' in size 12 not available
-(Font)              external font `ecssdc10' used on input line 70.
+(Font)              external font `ecssdc10' used on input line 95.
  (./RRZ.toc
 LaTeX Font Info:    Font shape `T1/ccr/sbc/n' in size 9 not available
 (Font)              external font `ecssdc10' used on input line 1.
@@ -929,30 +929,30 @@ LaTeX Font Info:    Font shape `T1/ccr/sbc/n' in size 5 not available
 
  [2]
 LaTeX Font Info:    Font shape `T1/ccr/sbc/n' in size 7 not available
-(Font)              external font `ecssdc10' used on input line 78.
- (./subfiles/21.tex) [3]
-(./RRZ.aux) ) 
+(Font)              external font `ecssdc10' used on input line 103.
+ (./subfiles/2-1.tex)
+[3] (./RRZ.aux) ) 
 Here is how much of TeX's memory you used:
- 4676 strings out of 492982
- 67374 string characters out of 6134895
- 134263 words of memory out of 5000000
- 8075 multiletter control sequences out of 15000+600000
- 28185 words of font info for 74 fonts, out of 8000000 for 9000
+ 4673 strings out of 492982
+ 67371 string characters out of 6134895
+ 134246 words of memory out of 5000000
+ 8073 multiletter control sequences out of 15000+600000
+ 26148 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,7n,30p,286b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/kacper/.texlive2017/texmf-var/fonts/pk/ljfour/public/concm
-ath-fonts/xccsy10.600pk> </home/kacper/.texlive2017/texmf-var/fonts/pk/ljfour/p
-ublic/concmath-fonts/xccsy7.600pk> </home/kacper/.texlive2017/texmf-var/fonts/p
-k/ljfour/public/concmath-fonts/xccex10.600pk>{/usr/share/texmf/fonts/enc/dvips/
-cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/euler/euex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/e
-uler/eurm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/eule
-r/eurm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfocc10.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sform10.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sform9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfssdc
-10.pfb>
-Output written on RRZ.pdf (3 pages, 96093 bytes).
+ 50i,7n,30p,241b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/kacper/.texlive2017/texmf-var/fonts/pk/ljfour/public/c
+oncmath-fonts/xccsy10.600pk> </home/kacper/.texlive2017/texmf-var/fonts/pk/ljfo
+ur/public/concmath-fonts/xccsy7.600pk> </home/kacper/.texlive2017/texmf-var/fon
+ts/pk/ljfour/public/concmath-fonts/xccex10.600pk>{/usr/share/texmf/fonts/enc/dv
+ips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/euler/euex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/euler/eurm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+euler/eurm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sform10.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sform9.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfssdc10.pfb>
+Output written on RRZ.pdf (3 pages, 87669 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
