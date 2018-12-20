@@ -1,0 +1,24 @@
+\begin{theorem}[o ciągłej zależności od parametru]
+  Niech
+  \[
+    y' = f(y,t,\lambda), \qquad
+    f \colon \R^{m + 1} \times \R^l \supset U \times B_l(\lambda_0,c) \longrightarrow \R^m,
+  \]
+  gdzie $f$ jest funkcją ciągłą oraz $c > 0$. Niech $y(t,\lambda_0)$ będzie rozwiązaniem równania
+  $y' = f(y,t,\lambda_0)$ z warunkiem początkowym $(y_0, t_0)$ określonym na \emph{zwartym}
+  przedziale $I$ zawierającym $t_0$. Wybierzmy $b > 0$ i rozważmy zbiór 
+  \[
+    R_b = \Big\{ (y,t) : t \in I, \norm[\big]{ y - y(t,\lambda_0) } < b \Big\}.
+  \]
+  Załóżmy dalej, że
+  \begin{enumerate}
+    \item $\exists L \geq 0 \ \forall (y_1,t),(y_2,t) \in R_b \quad
+    \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1 - y_2}$,
+    \item $\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall (y,t) \in R_b
+    \ \forall \lambda \colon \norm{\lambda - \lambda_0} < \delta \quad \norm[\big]{ f(y,t,\lambda) 
+    - f(y,t,\lambda_0) } < \varepsilon$.
+  \end{enumerate}
+  Wówczas istnieje stała $c^{\ast} > 0$ taka, że jeśli $\norm{\lambda - \lambda_0} < c^{\ast}$, to
+  $y(t,\lambda)$ jest określone na $I$ zaś jeśli $\lambda_n \to \lambda_0$, to $y(t,\lambda_n)
+  \rightrightarrows y(t,\lambda_0)$ na $I$.
+\end{theorem}
