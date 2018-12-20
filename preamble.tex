@@ -1,0 +1,81 @@
+\documentclass{mwrep}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1, nomathsymbols]{polski}
+\usepackage{lmodern}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage[
+  paperheight = 297mm,
+  paperwidth  = 210mm,
+  top         = 2.5cm,
+  bottom      = 2.5cm,
+  left        = 4.4cm,
+  right       = 4.4cm
+]{geometry}
+
+\declaretheoremstyle[
+  spaceabove = \topsep,
+  spacebelow = \topsep,
+  headfont   = \bfseries,
+  notefont   = \bfseries,
+  notebraces = {(}{)},
+  bodyfont   = \normalfont,
+]{mystyle}
+
+\let\proof\relax
+
+\declaretheorem[
+  style  = mystyle,
+  name   = Twierdzenie,
+  parent = section
+]{theorem}
+\declaretheorem[
+  style   = mystyle,
+  name    = Lemat,
+  sibling = theorem
+]{lemma}
+\declaretheorem[
+  style   = mystyle,
+  name    = Definicja,
+  sibling = theorem
+]{definition}
+\declaretheorem[
+  style   = mystyle,
+  name    = Wniosek,
+  sibling = theorem
+]{conclusion}
+\declaretheorem[
+  style   = mystyle,
+  name    = Przykład,
+  sibling = theorem
+]{example}
+\declaretheorem[
+  style    = mystyle,
+  name     = Dowód,
+  numbered = no,
+  qed      = \ensuremath{\blacksquare}
+]{proof}
+
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\N}{\mathbb{N}}
+\newcommand*{\Q}{\mathbb{Q}}
+\newcommand*{\Z}{\mathbb{Z}}
+\newcommand*{\C}{\mathbb{C}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\p{(}{)}
+
+\pagestyle{uheadings}
+\makeatletter
+\renewcommand\heading@font\scshape
+\makeatother
+
+\title{
+  \huge \textbf{Równania różniczkowe zwyczajne} \\
+  \Large Opracowanie zagadnień na egzamin
+}
+\author{ KJG }
+\date{ Wersja z \today }
