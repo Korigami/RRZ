@@ -1,0 +1,31 @@
+%!TEX root = ../RRZ.tex
+
+\begin{definition}
+  Równaniem liniowym nazywamy równanie postaci
+  \[
+    \frac{dy}{dt} = A(t)y + B(t),
+  \]
+  gdzie $A(t)$ jest macierzą $m \times m$, zaś $B(t)$ wektorem z $\R^m$ o ciągłych współczynnikach,
+  określonym na przedziale otwartym $I \subset \R$.
+\end{definition}
+
+\begin{definition}
+  Równanie $y' = A(t)y$ nazywamy \emph{jednorodnym}, zaś równanie $y' = A(t)y + B(t)$ (odpowiadającym)
+  niejednorodnym.
+\end{definition}
+
+\begin{theorem}
+  Zbiór rozwiązań równania jednorodnego jest podprzestrzenią liniową $C^0(I,\R^m)$, a zbiór rozwiązań
+  równania niejednorodnego jej wartwą.
+\end{theorem}
+
+\noindent Niech $V$ oznacza zbiór rozwiązań wysyconych równania $y' = A(t)y$.
+
+\begin{statement}
+  Następujące warunki są równoważne dla zbioru $\{y_1, \ldots, y_n\} \subset V$:
+  \begin{enumerate}
+    \item Zbiór jest liniowo niezależny.
+    \item Dla dowolnego $t \in I$ zbiór $\big\{y_1(t), \ldots, y_n(t)\big\}$ jest liniowo niezależny w $\R^m$.
+    \item Istnieje $t \in I$, że zbiór $\big\{y_1(t), \ldots, y_n(t)\big\}$ jest liniowo niezależny w $\R^m$.
+  \end{enumerate}
+\end{statement}

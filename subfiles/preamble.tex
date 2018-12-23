@@ -1,3 +1,5 @@
+%!TEX root = ../RRZ.tex
+
 \documentclass{mwrep}
 
 \usepackage[utf8]{inputenc}
@@ -31,6 +33,11 @@
   name   = Twierdzenie,
   parent = section
 ]{theorem}
+\declaretheorem[
+  style  = mystyle,
+  name   = Stwierdzenie,
+  sibling = theorem
+]{statement}
 \declaretheorem[
   style   = mystyle,
   name    = Lemat,
@@ -84,21 +91,3 @@
 }
 \author{ KJG }
 \date{ Wersja z \today }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

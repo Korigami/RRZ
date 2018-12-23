@@ -1,3 +1,25 @@
+%!TEX root = ../RRZ.tex
+
 \begin{theorem}[o różniczkowalnej zależności od parametru]
-  adawdwadad
+  Niech
+  \[
+    y' = f(y,t,\lambda), \qquad 
+    f \colon \R^{m+1} \times \R \supset U \times (\lambda_0 - c, \lambda_0 + c) \longrightarrow \R^m,
+  \]
+  gdzie $f$ jest funkcją ciągłą względem $y,t,\lambda$ oraz klasy $C^1$ względem $y,\lambda$. Ustalmy
+  warunek początkowy $(y_0,t_0)$ i oznaczmy przez $y(t,\lambda)$ rozwiązanie równania
+  \[
+    \frac{\partial y(t,\lambda)}{\partial t} = f(y,t,\lambda)
+  \]
+  z warunkiem początkowym $y(t_0,\lambda) = y_0$, określone na ustalonym i \emph{zwartym} przedziale $I$.
+  Wówczas na przedziale $I$ istnieje ciągła funkcja
+  \[
+    z(t,\lambda_0) = \frac{\partial y(t,\lambda)}{\partial \lambda} \Big\vert_{\lambda = \lambda_0}
+  \]
+  oraz zachodzi równość
+  \[
+    \frac{\partial z(t,\lambda_0)}{\partial t} =
+    \frac{\partial^2 y(t,\lambda)}{\partial t \partial \lambda} \Big\vert_{\lambda = \lambda_0} =
+    \frac{\partial^2 y(t,\lambda)}{\partial \lambda \partial t} \Big\vert_{\lambda = \lambda_0}.
+  \]
 \end{theorem}
