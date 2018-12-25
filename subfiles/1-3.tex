@@ -1,6 +1,6 @@
 %!TEX root = ../RRZ.tex
 
-\noindent Niech
+\noindent Rozważmy równanie
 \begin{equation} \label{secondorder1}
   a_2(t)y'' + a_1(t)y' + a_0(t)y = 0,
 \end{equation}
@@ -16,18 +16,132 @@ gdzie $a_2,a_1,a_0$ są analityczne w pewnym punkcie $t_0$.
   y'' + p(t)y' + q(t)y = 0,
 \end{equation}
 gdzie $p$ i $q$ są analityczne w punkcie $t_0$, czyli
-\[
+\begin{equation*}
   p(t) = \sum_{n=0}^{\infty}p_n(t - t_0)^n, \qquad q(t) = \sum_{n=0}^{\infty}q_n(t - t_0)^n.
-\]
+\end{equation*}
 
 \begin{theorem}
   Każde rozwiązanie równania \eqref{secondorder2} jest analityczne w kole, w którym oba szeregi
   $p(t)$ i $q(t)$ zbiegają. Co więcej, analityczna funkcja
-  \[
+  \begin{equation*}
     y(t) = \sum_{n=0}^{\infty}c_n(t - t_0)^n
-  \]
+  \end{equation*}
   jest rozwiązaniem wtedy i tylko wtedy, gdy
-  \[
-    c_{n+2} = - \frac{1}{(n+1)(n+2)} \p*{ \sum_{k=0}^{n} c_{k+1}(k+1)p_{n-k} + \sum_{k=0}^{n} c_k + q_{n-k} }
-  \]
+  \begin{equation} \label{rr}
+    c_{n+2} =
+    - \frac{1}{(n+1)(n+2)} \p*{ \sum_{k=0}^{n} c_{k+1}(k+1)p_{n-k} + \sum_{k=0}^{n} c_k q_{n-k} }.
+  \end{equation}
 \end{theorem}
+
+\begin{proof}
+  Dla ustalenia uwagi niech $t_0 = 0$ oraz $y(t) = \sum_{n=0}^{\infty} c_nt^n$. Wtedy
+  \begin{equation*}
+    y'(t) = \sum_{n=0}^{\infty} (n+1) c_{n+1} t^n, \qquad
+    y''(t) = \sum_{n=0}^{\infty} (n+1)(n+2) c_{n+2} t^n.
+  \end{equation*}
+  Z iloczynu Cauchy'ego\footnote{
+    $ \p*{ \sum_{n=0}^{\infty} a_n } \cdot \p*{ \sum_{n=0}^{\infty} b_n } =
+    \sum_{n=0}^{\infty} \sum_{k=0}^{n} a_k b_{n-k} $
+  }
+  dostajemy
+  \begin{flalign*}
+    p(t) y'(t) &= \p*{ \sum_{n=0}^{\infty} p_n t^n} \cdot \p*{\sum_{n=0}^{\infty} (n+1) c_{n+1} 
+    t^n} = \sum_{n=0}^{\infty} t^n \sum_{k=0}^{n} (k+1) c_{k+1} p_{n-k}, & \\
+    q(t) y(t) &= \p*{ \sum_{n=0}^{\infty} q_n t^n } \cdot \p*{ \sum_{n=0}^{\infty} c_n t^n } = 
+    \sum_{n=0}^{\infty} t^n \sum_{k=0}^{n} c_k q_{n-k}.
+  \end{flalign*}
+  Rozpisując lewą stronę równania \eqref{secondorder2}, dostajemy
+  \begin{equation*}
+    \sum_{n=0}^{\infty} t^n \p*{ (n+1)(n+2)c_{n+2} + \sum_{k=0}^{n} (k+1) c_{k+1} p_{n-k} + 
+    \sum_{k=0}^{n} c_k q_{n-k} } = 0.
+  \end{equation*}
+  Z analityczności, dla każdego $n \geq 0$ jest
+  \begin{equation*}
+    (n+1)(n+2)c_{n+2} + \sum_{k=0}^{n} (k+1) c_{k+1} p_{n-k} + \sum_{k=0}^{n} c_k q_{n-k} = 0,
+  \end{equation*}
+  co dowodzi wzoru \eqref{rr}.
+  
+  Relacja rekurencyjna \eqref{rr} zadaje współczynniki $c_n$ dla $n \geq 2$, jeśli 
+  wybrane zostały $c_0$, $c_1$. Zauważmy, że $c_0 = y(t_0)$, $c_1 = y'(t_0)$. Zatem dobierając 
+  $c_0$ oraz $c_1$ możemy otrzymać dowolny warunek początkowy dla $y$, co pozwala uzyskać każde 
+  rozwiązanie wysycone. Pozostaje pokazać, że przy dowolnym wyborze $c_0$, $c_1$ relacja \eqref{rr} 
+  prowadzi do szeregu Taylora funkcji analitycznej w kole $D(t_0,R)$. 
+  
+  Wybierzmy $0 < r < R$. Wtedy funkcje $p,q$ są zbieżne w $\overline{D} (t_0,r)$ oraz
+  \begin{equation*}
+    \sum_{n=0}^{\infty} \abs{p_n} r^n < \infty, \qquad \sum_{n=0}^{\infty} \abs{q_n} r^n < \infty.
+  \end{equation*}
+  Z powyższego, istnieją stałe $L_p$, $L_q$ takie, że dla dowolnego $n \geq 0$ jest
+  \begin{equation*}
+    \abs{p_n} r^n \leq L_p, \qquad \abs{q_n} r^n \leq L_q.
+  \end{equation*}
+  Niech $0 < \rho < r$ oraz $\gamma_n = \abs{c_n} \rho^n$, $\Gamma_n = \max\{\gamma_j: j = 
+  1,\ldots,n\}$. Wtedy
+  \begin{align*}
+    \abs{\gamma_{n+2}} &\leq \frac{\rho^{n+2}}{(n+1)(n+2)}
+    \p*{ \sum_{k = 0}^{n} (k + 1) \cdot \abs{c_{k + 1}} \cdot \abs{p_{n - k}} + 
+    \sum_{k = 0}^{n} \abs{c_k} \cdot \abs{q_{n - k}}} \\ &\leq
+    \frac{\rho^{n+2}}{(n+1)(n+2)}
+    \p*{ \sum_{k=0}^{n} (n+1) \cdot \frac{\gamma_{k+1}}{\rho^{k+1}} \cdot \frac{L_p}{r^{n-k}} + 
+    \sum_{k=0}^{n} \frac{\gamma_k}{\rho^k} \cdot \frac{L_q}{r^{n-k}} } \\ &\leq 
+    \frac{\rho^{n+2}}{(n+1)(n+2)}
+    \p*{ (n+1) \sum_{k=0}^{n} \frac{\Gamma_{n+1}}{\rho^{k-n} \rho^{n+1}} \cdot 
+    \frac{L_p}{r^{n-k}} +
+    \sum_{k=0}^{n} \frac{\Gamma_n}{\rho^{k-n}\rho^{n}} \cdot \frac{L_q}{r^{n-k}} } \\ &\leq
+    \frac{\rho L_p}{n+2} \Gamma_{n+1} \sum_{k=0}^{n} \p*{ \frac{\rho}{r} }^{n-k} + 
+    \frac{\rho^2 L_q}{(n+1)(n+2)} \Gamma_n \sum_{k=0}^{n} \p*{ \frac{\rho}{r} }^{n-k} \\ &\leq
+    \p*{ \frac{\rho L_p}{n+2} + \frac{\rho^2 L_q}{(n+2)(n+1)}} \Gamma_{n+1}
+    \sum_{k=0}^n \p*{ \frac{\rho}{r} }^{n-k} \\ &\leq
+    \underbrace{\p*{ \frac{\rho L_p}{n+2} + \frac{\rho^2 L_q}{(n+2)(n+1)}} \cdot \p*{\frac{1}{1 - 
+    \frac{\rho}{r}}}}_{(\ast)} \Gamma_{n+1}.
+  \end{align*}
+  Wyrażenie $(\ast)$ zbiega do zera, gdy $n \to \infty$. Zauważmy, że
+  \begin{equation*}
+    \exists N \ \forall n \geq N \quad \gamma_{n+2} \leq \Gamma_{n+1} \implies \Gamma_{n+2} = 
+    \Gamma_{n+1}.
+  \end{equation*}
+  Oznacza to, że ciąg $\Gamma_n$ jest stały od pewnego miejsca i ograniczony przez 
+  pewne~$\overline{\Gamma}$. Wtedy $\abs{c_n}\rho^n \leq \overline{\Gamma}$. Zatem jeśli $\abs{t} < 
+  \rho$, to z kryterium Cauchy'ego jest
+  \begin{equation*}
+    \sqrt[n]{\abs{c_n} \cdot \abs{t}^n} = \sqrt[n]{\abs{c_n} \cdot \rho^n} \cdot 
+    \sqrt[n]{\frac{\abs{t}^n}{\rho^n}} \leq \sqrt[n]{\overline{\Gamma}} \cdot \abs*{\frac{t}{\rho}} 
+    < 1.
+  \end{equation*}
+  Szereg $\sum c_n t^n$ jest zbieżny w kole o promieniu $\rho$. Ponieważ $\rho$ może być dowolnie 
+  bliskie $R$, to suma kół wypełnia koło otwarte o promieniu $R$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
