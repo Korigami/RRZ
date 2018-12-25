@@ -10,19 +10,22 @@
   $y' = f(y,t,\lambda_0)$ z warunkiem początkowym $(y_0, t_0)$ określonym na \emph{zwartym}
   przedziale $I$ zawierającym $t_0$. Wybierzmy $b > 0$ i rozważmy zbiór 
   \[
-    R_b = \Big\{ (y,t) : t \in I, \norm[\big]{ y - y(t,\lambda_0) } < b \Big\}.
+    R_b = \big\{ (y,t) : t \in I, \norm[\big]{ y - y(t,\lambda_0) } < b \big\}.
   \]
   Załóżmy dalej, że
   \begin{enumerate}
-    \item $\exists L \geq 0 \ \forall (y_1,t),(y_2,t) \in R_b \quad
-    \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1 - y_2}$,
-    \item $\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall (y,t) \in R_b
-    \ \forall \lambda \colon \norm{\lambda - \lambda_0} < \delta \quad \norm[\big]{ f(y,t,\lambda) 
-    - f(y,t,\lambda_0) } < \varepsilon$.
+    \item Istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ jest
+    \[
+      \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1 - y_2},
+    \]
+    \item Dla dowolnego $\varepsilon > 0$ istnieje $\delta > 0$, że dla $(y,t) \in R_b$ zachodzi
+    \[
+      \norm{\lambda - \lambda_0} < \delta \implies \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon.
+    \]
   \end{enumerate}
   Wówczas istnieje stała $c^{\ast} > 0$ taka, że
   \begin{enumerate}
-    \item jeśli $\norm{\lambda - \lambda_0} < c^{\ast}$, to $y(t,\lambda)$ jest określone na $I$
-    \item jeśli $\lambda_n \to \lambda_0$, to $y(t,\lambda_n) \rightrightarrows y(t,\lambda_0)$ na $I$.
+    \item Jeśli $\norm{\lambda - \lambda_0} < c^{\ast}$, to $y(t,\lambda)$ jest określone na $I$,
+    \item Jeśli $\lambda_n \to \lambda_0$, to $y(t,\lambda_n) \rightrightarrows y(t,\lambda_0)$ na $I$.
   \end{enumerate}
 \end{theorem}

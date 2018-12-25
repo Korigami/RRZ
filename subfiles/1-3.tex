@@ -1,0 +1,33 @@
+%!TEX root = ../RRZ.tex
+
+\noindent Niech
+\begin{equation} \label{secondorder1}
+  a_2(t)y'' + a_1(t)y' + a_0(t)y = 0,
+\end{equation}
+gdzie $a_2,a_1,a_0$ są analityczne w pewnym punkcie $t_0$.
+
+\begin{definition}
+  Powiemy, że $t_0$ jest \emph{punktem regularnym} wtedy i tylko wtedy, gdy $a_2(t_0) \not= 0$.
+  W przeciwnym wypadku $t_0$ nazwiemy \emph{punktem osobliwym}.
+\end{definition}
+
+\noindent W przypadku regularnym równanie \eqref{secondorder2} sprowadza się do
+\begin{equation} \label{secondorder2}
+  y'' + p(t)y' + q(t)y = 0,
+\end{equation}
+gdzie $p$ i $q$ są analityczne w punkcie $t_0$, czyli
+\[
+  p(t) = \sum_{n=0}^{\infty}p_n(t - t_0)^n, \qquad q(t) = \sum_{n=0}^{\infty}q_n(t - t_0)^n.
+\]
+
+\begin{theorem}
+  Każde rozwiązanie równania \eqref{secondorder2} jest analityczne w kole, w którym oba szeregi
+  $p(t)$ i $q(t)$ zbiegają. Co więcej, analityczna funkcja
+  \[
+    y(t) = \sum_{n=0}^{\infty}c_n(t - t_0)^n
+  \]
+  jest rozwiązaniem wtedy i tylko wtedy, gdy
+  \[
+    c_{n+2} = - \frac{1}{(n+1)(n+2)} \p*{ \sum_{k=0}^{n} c_{k+1}(k+1)p_{n-k} + \sum_{k=0}^{n} c_k + q_{n-k} }
+  \]
+\end{theorem}
