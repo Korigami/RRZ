@@ -1,38 +1,47 @@
 %!TEX root = ../RRZ.tex
-
-\noindent Rozważmy równanie
+%
+Rozważmy równanie
+%
 \begin{equation} \label{secondorder1}
-  a_2(t)y'' + a_1(t)y' + a_0(t)y = 0,
+  a_2(t) y'' + a_1(t)y' + a_0(t)y = 0,
 \end{equation}
+%
 gdzie $a_2,a_1,a_0$ są analityczne w pewnym punkcie $t_0$.
-
+%
 \begin{definition}
-  Powiemy, że $t_0$ jest \emph{punktem regularnym} wtedy i tylko wtedy, gdy $a_2(t_0) \not= 0$.
-  W przeciwnym wypadku $t_0$ nazwiemy \emph{punktem osobliwym}.
+  Powiemy, że $t_0$ jest \emph{punktem regularnym} wtedy i tylko wtedy, gdy $a_2(t_0) \not= 0$. W przeciwnym wypadku 
+  $t_0$ nazwiemy \emph{punktem osobliwym}.
 \end{definition}
-
-\noindent W przypadku regularnym równanie \eqref{secondorder2} sprowadza się do
+%
+W przypadku regularnym równanie \eqref{secondorder2} sprowadza się do
+%
 \begin{equation} \label{secondorder2}
   y'' + p(t)y' + q(t)y = 0,
 \end{equation}
+%
 gdzie $p$ i $q$ są analityczne w punkcie $t_0$, czyli
+%
 \begin{equation*}
-  p(t) = \sum_{n=0}^{\infty}p_n(t - t_0)^n, \qquad q(t) = \sum_{n=0}^{\infty}q_n(t - t_0)^n.
+  p(t) = \sum_{n=0}^{\infty} p_n(t-t_0)^n, \qquad q(t) = \sum_{n=0}^{\infty} 
+  q_n(t-t_0)^n.
 \end{equation*}
-
+%
 \begin{theorem}
-  Każde rozwiązanie równania \eqref{secondorder2} jest analityczne w kole, w którym oba szeregi
-  $p(t)$ i $q(t)$ zbiegają. Co więcej, analityczna funkcja
+  Każde rozwiązanie równania \eqref{secondorder2} jest analityczne w kole, w 
+  którym oba szeregi $p(t)$ i $q(t)$ zbiegają. Co więcej, analityczna funkcja
+  %
   \begin{equation*}
     y(t) = \sum_{n=0}^{\infty}c_n(t - t_0)^n
   \end{equation*}
+  %
   jest rozwiązaniem wtedy i tylko wtedy, gdy
+  %
   \begin{equation} \label{rr}
-    c_{n+2} =
-    - \frac{1}{(n+1)(n+2)} \p*{ \sum_{k=0}^{n} c_{k+1}(k+1)p_{n-k} + \sum_{k=0}^{n} c_k q_{n-k} }.
+    c_{n+2} = - \frac{1}{(n+1)(n+2)} \p*{ \sum_{k=0}^{n} c_{k+1}(k+1)p_{n-k} + 
+    \sum_{k=0}^{n} c_k q_{n-k} }.
   \end{equation}
 \end{theorem}
-
+%
 \begin{proof}
   Dla ustalenia uwagi niech $t_0 = 0$ oraz $y(t) = \sum_{n=0}^{\infty} c_nt^n$. Wtedy
   \begin{equation*}
@@ -40,7 +49,7 @@ gdzie $p$ i $q$ są analityczne w punkcie $t_0$, czyli
     y''(t) = \sum_{n=0}^{\infty} (n+1)(n+2) c_{n+2} t^n.
   \end{equation*}
   Z iloczynu Cauchy'ego\footnote{
-    $ \p*{ \sum_{n=0}^{\infty} a_n } \cdot \p*{ \sum_{n=0}^{\infty} b_n } =
+    $ \p*{ \sum_{n=0}^{\infty} a_n } \cdot \p*{ \sum_{n=0}^{\infty} b_n } = 
     \sum_{n=0}^{\infty} \sum_{k=0}^{n} a_k b_{n-k} $
   }
   dostajemy
@@ -61,11 +70,12 @@ gdzie $p$ i $q$ są analityczne w punkcie $t_0$, czyli
   \end{equation*}
   co dowodzi wzoru \eqref{rr}.
   
-  Relacja rekurencyjna \eqref{rr} zadaje współczynniki $c_n$ dla $n \geq 2$, jeśli 
-  wybrane zostały $c_0$, $c_1$. Zauważmy, że $c_0 = y(t_0)$, $c_1 = y'(t_0)$. Zatem dobierając 
-  $c_0$ oraz $c_1$ możemy otrzymać dowolny warunek początkowy dla $y$, co pozwala uzyskać każde 
-  rozwiązanie wysycone. Pozostaje pokazać, że przy dowolnym wyborze $c_0$, $c_1$ relacja \eqref{rr} 
-  prowadzi do szeregu Taylora funkcji analitycznej w kole $D(t_0,R)$. 
+  Relacja rekurencyjna \eqref{rr} zadaje współczynniki $c_n$ dla $n \geq 2$, 
+  jeśli wybrane zostały $c_0$, $c_1$. Zauważmy, że $c_0=y(t_0)$, $c_1=y'(t_0)$.
+  Zatem dobierając $c_0$ oraz $c_1$ możemy otrzymać dowolny warunek początkowy 
+  dla $y$, co pozwala uzyskać każde rozwiązanie wysycone. Pozostaje pokazać, że 
+  przy dowolnym wyborze $c_0$, $c_1$ relacja \eqref{rr} prowadzi do szeregu 
+  Taylora funkcji analitycznej w kole $D(t_0,R)$.
   
   Wybierzmy $0 < r < R$. Wtedy funkcje $p,q$ są zbieżne w $\overline{D} (t_0,r)$ oraz
   \begin{equation*}
