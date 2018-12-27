@@ -41,7 +41,7 @@
 
 \begin{lemma}[o przedłużaniu przez koniec]
   Niech $y' = f(y,t)$, gdzie funkcja $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie
-  lipszycowska względem $y$. Niech $y(t)$ -- rozwiązanie, $T$ -- koniec $\Dm y$, granica
+  lipszycowska względem $y$. Niech $y(t)$ -- rozwiązanie, $T$ -- koniec $\Domain y$, granica
   $\lim_{t \to T} y(t) = y_T$ istnieje oraz $(y_T, T) \in U$. Wówczas $y$ rozszerza się na przedział
   zawierający $T$ we wnętrzu.
 \end{lemma}
@@ -52,7 +52,7 @@
   którego końcem jest $T \in \R$. Przypuśćmy dalej, że istnieje zbiór zwarty $K \subset U$ oraz
   $\varepsilon > 0$, taki, że
   \[
-    \forall t \in \Dm y \cap [T - \varepsilon, T + \varepsilon] \quad \p[\big]{y(t), t} \in K.
+    \forall t \in \Domain y \cap [T - \varepsilon, T + \varepsilon] \quad \p[\big]{y(t), t} \in K.
   \]
   Wtedy $y$ rozszerza się na przedział zawierający $T$ we wnętrzu.
 \end{theorem}
@@ -62,5 +62,5 @@
   lipszycowska względem $y$ oraz $(y_0, t_0) \in U$. Wówczas istnieje rozwiązanie $y_{\mathrm{max}}$ zwane
   \emph{wysyconym}, określone na przedziale otwartym, spełniające warunek początkowy $y_{\mathrm{max}}(t_0)
   = y_0$ i takie, że jeśli $y$ jest dowolnym rozwiązaniem spełniającym warunek $y(t_0) = y_0$, to
-  $\Dm y \subset \Dm y_{\mathrm{max}}$ oraz $y$ jest obcięciem $y_{\mathrm{max}}$.
+  $\Domain y \subset \Domain y_{\mathrm{max}}$ oraz $y$ jest obcięciem $y_{\mathrm{max}}$.
 \end{theorem}

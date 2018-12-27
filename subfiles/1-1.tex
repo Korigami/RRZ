@@ -3,26 +3,21 @@
 \begin{theorem}[O ciągłej zależności od parametru]
   Niech
   \[
-    y' = f(y,t,\lambda), \qquad
-    f \colon \R^{m + 1} \times \R^l \supset U \times B_l(\lambda_0,c) \longrightarrow \R^m,
+    y' = f(y,t,\lambda), \qquad f \colon \R^{m+1} \times \R^l \supset U \times B_l(\lambda_0,c) \longrightarrow \R^m,
   \]
-  gdzie $f$ jest funkcją ciągłą oraz $c > 0$. Niech $y(t,\lambda_0)$ będzie 
-  rozwiązaniem równania $y' = f(y,t,\lambda_0)$ z warunkiem początkowym
-  $(y_0, t_0)$ określonym na \emph{zwartym} przedziale $I$ zawierającym $t_0$. 
-  Wybierzmy $b > 0$ i rozważmy zbiór 
+  gdzie $f$ jest funkcją ciągłą oraz $c>0$. Niech $y(t,\lambda_0)$ będzie rozwiązaniem równania $y' = f(y,t,\lambda_0)$ 
+  z warunkiem początkowym $(y_0,t_0)$ określonym na \emph{zwartym} przedziale $I$ zawierającym $t_0$. Wybierzmy $b > 0$ 
+  i rozważmy zbiór
   \[
-    R_b = \big\{ (y,t) : t \in I \text{ oraz }
-    \norm[\big]{ y - y(t,\lambda_0) } < b \big\}.
+    R_b = \big\{ (y,t) : t \in I \text{ oraz } \norm[\big]{ y - y(t,\lambda_0) } < b \big\}.
   \]
   Załóżmy dalej, że
   \begin{enumerate}
-    \item Istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ jest:
+    \item istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ jest:
     \[
-      \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot 
-      \norm{y_1 - y_2}.
+      \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1-y_2},
     \]
-    \item Dla dowolnego $\varepsilon > 0$ istnieje $\delta > 0$, że dla $(y,t) 
-    \in R_b$ zachodzi:
+    \item dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ zachodzi:
     \[
       \forall \lambda \quad \norm{\lambda - \lambda_0} < \delta \implies 
       \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon.
@@ -30,83 +25,68 @@
   \end{enumerate}
   Wówczas istnieje stała $c^{\ast} > 0$ taka, że
   \begin{enumerate}
-    \item Jeśli $\norm{\lambda-\lambda_0} < c^{\ast}$, to $y(t,\lambda)$ jest 
-    określone na $I$.
-    \item Jeśli $\lambda_n \to \lambda_0$, to $y(t,\lambda_n) \rightrightarrows y(t,\lambda_0)$ na $I$.
+    \item jeśli $\norm{\lambda-\lambda_0} < c^{\ast}$, to $y(t,\lambda)$ jest określone na $I$,
+    \item jeśli $\lambda_n \to \lambda_0$, to $y(t,\lambda_n) \rightrightarrows y(t,\lambda_0)$ na $I$.
   \end{enumerate}
 \end{theorem}
-
 \begin{proof}
   W dowodzie wykorzystamy poniższy lemat.
-  
   \begin{lemma} \label{L: Kluczowy}
     Przy założeniach twierdzenia przypuśćmy, że
     \begin{enumerate}
-      \item Na pewnym przedziale $J \subset I$ jeśli $t \in J$, to 
-      $\p[\big]{y(t,\lambda),t} \in R_b$.
-      \item Dla każdego $\varepsilon > 0$ oraz $(y,t) \in R_b$ zachodzi
+      \item na pewnym przedziale $J \subset I$ jeśli $t \in J$, to $\p[\big]{y(t,\lambda),t} \in R_b$,
+      \item dla każdego $\varepsilon > 0$ oraz $(y,t) \in R_b$ zachodzi:
       $ \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } \leq \varepsilon $.
     \end{enumerate}
-    Wtedy dla każdego $t \in J$ jest
+    Wtedy dla każdego $t \in J$ jest:
     \[
-      \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq
-      \varepsilon \cdot e^{L \abs{t-t_0}} \cdot \abs{t-t_0}.
+      \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \varepsilon \cdot e^{L \abs{t-t_0}} \cdot \abs{t-t_0}.
     \]
   \end{lemma}
-
-  \begin{innerproof}
+  \begin{nestedproof}
     \begin{align*}
       \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }
-      &= \norm*{ \int_{t_0}^t f \p[\big]{ y(u,\lambda), u, \lambda } du - 
-      \int_{t_0}^t \p[\big]{ y(u,\lambda_0), u, \lambda_0 } du} \\
-      &\leq \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, 
-      \lambda } - \p[\big]{ y(u,\lambda_0), u, \lambda_0 } } du } \\
-      &\leq \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, 
-      \lambda } - \p[\big]{ y(u,\lambda), u, \lambda_0 } } du } \\
-      &\mathrel{\makebox[\widthof{=}]{+}} \abs*{ \int_{t_0}^t \norm[\Big]{ f 
-      \p[\big]{ y(u,\lambda), u, \lambda_0 } - \p[\big]{ y(u,\lambda_0), u, 
-      \lambda_0 } } du } \\
-      &\leq \abs*{\int_{t_0}^t \varepsilon \, du} + \abs*{ \int_{t_0}^t L \cdot 
-      \norm[\big]{ y(u,\lambda) - y(u,\lambda_0) } du } \\
-      &\leq \underbrace{\varepsilon \cdot \abs*{t-t_0}}_K + \abs*{ \int_{t_0}^t 
-      L \cdot \norm[\big]{ y(u,\lambda) - y(u,\lambda_0) } du }
+      &= \norm*{ \int_{t_0}^t f \p[\big]{ y(u, \lambda), u, \lambda } du - 
+          \int_{t_0}^t f\p[\big]{ y(u,\lambda_0), u, \lambda_0 } du} \\
+      &\leq \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, \lambda } - 
+          f\p[\big]{ y(u,\lambda_0), u, \lambda_0 } } du } \\
+      &\leq \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, \lambda } - 
+          f\p[\big]{ y(u,\lambda), u, \lambda_0 } } du } \\
+      &\qquad+ \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, \lambda_0 } - 
+          f\p[\big]{ y(u,\lambda_0), u, \lambda_0 } } du } \\
+      &\leq \abs*{\int_{t_0}^t \varepsilon \, du} + 
+          \abs*{ \int_{t_0}^t L \cdot \norm[\big]{ y(u,\lambda) - y(u,\lambda_0) } du } \\
+      &\leq \underbrace{\varepsilon \cdot \abs*{t-t_0}}_K + 
+          \abs*{ \int_{t_0}^t L \cdot \norm[\big]{ y(u,\lambda) - y(u,\lambda_0) } du }.
     \end{align*}
     Z nierówności Gronwalla ze stałą $K$ wynika teza.
-  \end{innerproof}
-
-  \noindent Wybierzmy $\varepsilon > 0$ taki, że $\varepsilon \cdot \abs{I} 
-  \cdot e^{L \abs{I}} \leq \frac b2$ oraz oznaczmy $c^{\ast} = 
-  \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że $\norm{\lambda - 
-  \lambda_0} < \delta_{\varepsilon}$. Niech $J$ będzie maksymalnym 
-  podprzedziałem $I$, na którym zachodzi:
+  \end{nestedproof}
+  Wybierzmy $\varepsilon > 0$ taki, że $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$ oraz oznaczmy 
+  $c^{\ast} = \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że $\norm{\lambda - \lambda_0} < 
+  \delta_{\varepsilon}$. Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym zachodzi:
   \[
     \forall t \in J \quad \p[\big]{ y(t,\lambda), t } \in R_b.
   \]
-  Wtedy z lematu \ref{L: Kluczowy} dostajemy
+  Wtedy z lematu \ref{L: Kluczowy} dostajemy:
   \[
-    \forall t \in J \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq 
-    \frac b2.
+    \forall t \in J \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \frac b2.
   \]
-  Przypuśćmy, że jeden z końców $J$, nazwijmy go $\alpha$, należy do wnętrza 
-  $I$. Wówczas z twierdzenia \ref{T: TOPK}, $y(t,\lambda)$ przedłuża się na 
-  przedział $\widetilde{J}$ zawierający $\alpha$ we wnętrzu. Co więcej, 
-  ponieważ $\norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }$ jest funkcją ciągłą 
-  względem $t$, to pozostaje mniejsza od $t$ na pewnym otoczeniu $\alpha$. 
-  Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc 
-  pierwszą część tezy.
+  Przypuśćmy, że jeden z końców $J$, nazwijmy go $\alpha$, należy do wnętrza $I$. Wówczas z twierdzenia \ref{T: TOPK}, 
+  $y(t,\lambda)$ przedłuża się na przedział $\widetilde{J}$ zawierający $\alpha$ we wnętrzu. Co więcej, ponieważ 
+  $\norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }$ jest funkcją ciągłą względem $t$, to pozostaje mniejsza od $b$ na 
+  pewnym otoczeniu $\alpha$. Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc pierwszą 
+  część tezy.
   
-  Przystąpmy teraz do dowodu części drugiej. Jeśli $\lambda_n \to \lambda_0$, 
-  to z założenia drugiego istnieje ciąg $\varepsilon_n \to 0$ taki, że
+  Jeśli $\lambda_n \to \lambda_0$, to z założenia drugiego istnieje ciąg $\varepsilon_n \to 0$ taki, że
   \[
-    \forall (y,t) \in R_b \ \forall n \quad \norm[\big]{ f(y,t,\lambda) - 
-    f(y,t,\lambda_0) } < \varepsilon_n.
+    \forall (y,t) \in R_b \ \forall n \quad \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n.
   \]
-  Z lematu \ref{L: Kluczowy} dostajemy
+  Z lematu \ref{L: Kluczowy} dostajemy:
   \[
-    \forall t \in I \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq 
-    \varepsilon_n \cdot \abs{I} \cdot e^{L \abs{I}} \xrightarrow{n\to\infty} 0. 
-    \qedhere
+    \forall t \in I \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq
+    \varepsilon_n \cdot \abs{I} \cdot e^{L \abs{I}} \xrightarrow{n\to\infty} 0,
   \]
+  co dowodzi drugiej części tezy.
 \end{proof}
 
 
