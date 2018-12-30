@@ -1,49 +1,69 @@
 %!TEX root = ../RRZ.tex
-
+%
 \begin{theorem}[O ciągłej zależności od parametru]
   Niech
-  \[
+%
+  \begin{equation*}
     y' = f(y,t,\lambda), \qquad f \colon \R^{m+1} \times \R^l \supset U \times B_l(\lambda_0,c) \longrightarrow \R^m,
-  \]
+  \end{equation*}
+%
   gdzie $f$ jest funkcją ciągłą oraz $c>0$. Niech $y(t,\lambda_0)$ będzie rozwiązaniem równania $y' = f(y,t,\lambda_0)$ 
   z warunkiem początkowym $(y_0,t_0)$ określonym na \emph{zwartym} przedziale $I$ zawierającym $t_0$. Wybierzmy $b > 0$ 
   i rozważmy zbiór
-  \[
+%
+  \begin{equation*}
     R_b = \big\{ (y,t) : t \in I \text{ oraz } \norm[\big]{ y - y(t,\lambda_0) } < b \big\}.
-  \]
+  \end{equation*}
+%
   Załóżmy dalej, że
-  \begin{enumerate}
-    \item istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ jest:
-    \[
+%
+  \begin{enumerate}[label=\alph*)]
+    \item istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ zachodzi:
+%
+    \begin{equation*}
       \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1-y_2},
-    \]
-    \item dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ zachodzi:
-    \[
-      \forall \lambda \quad \norm{\lambda - \lambda_0} < \delta \implies 
-      \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon.
-    \]
+    \end{equation*}
+%
+    \item\label{b} dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ oraz każdej $\lambda$ jest:
+%
+    \begin{equation*}
+      \norm{\lambda - \lambda_0} < \delta \implies \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon.
+    \end{equation*}
+%
   \end{enumerate}
+%
   Wówczas istnieje stała $c^{\ast} > 0$ taka, że
+%
   \begin{enumerate}
     \item jeśli $\norm{\lambda-\lambda_0} < c^{\ast}$, to $y(t,\lambda)$ jest określone na $I$,
     \item jeśli $\lambda_n \to \lambda_0$, to $y(t,\lambda_n) \rightrightarrows y(t,\lambda_0)$ na $I$.
   \end{enumerate}
+%
 \end{theorem}
+%
 \begin{proof}
-  W dowodzie wykorzystamy poniższy lemat.
-  \begin{lemma} \label{L: Kluczowy}
-    Przy założeniach twierdzenia przypuśćmy, że
+  W dowodzie wykorzystamy lemat pomocniczy.
+%
+  \begin{nestedlemma} \label{L: Kluczowy}
+%
+    Przy założeniach twierdzenia przypuśćmy, że na $J \subset I$ zachodzi
+%
     \begin{enumerate}
-      \item na pewnym przedziale $J \subset I$ jeśli $t \in J$, to $\p[\big]{y(t,\lambda),t} \in R_b$,
-      \item dla każdego $\varepsilon > 0$ oraz $(y,t) \in R_b$ zachodzi:
+      \item dla wszystkich $t \in J$ jest $\p[\big]{y(t,\lambda),t} \in R_b$,
+      \item dla każdego $\varepsilon > 0$ oraz $(y,t) \in R_b$ zachodzi
       $ \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } \leq \varepsilon $.
     \end{enumerate}
-    Wtedy dla każdego $t \in J$ jest:
-    \[
+%
+    Wtedy dla każdego $t \in J$ prawdziwa jest nierówność:
+%
+    \begin{equation*}
       \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \varepsilon \cdot e^{L \abs{t-t_0}} \cdot \abs{t-t_0}.
-    \]
-  \end{lemma}
+    \end{equation*}
+%
+  \end{nestedlemma}
+%
   \begin{nestedproof}
+%
     \begin{align*}
       \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }
       &= \norm*{ \int_{t_0}^t f \p[\big]{ y(u, \lambda), u, \lambda } du - 
@@ -59,33 +79,46 @@
       &\leq \underbrace{\varepsilon \cdot \abs*{t-t_0}}_K + 
           \abs*{ \int_{t_0}^t L \cdot \norm[\big]{ y(u,\lambda) - y(u,\lambda_0) } du }.
     \end{align*}
+%
     Z nierówności Gronwalla ze stałą $K$ wynika teza.
+%
   \end{nestedproof}
-  Wybierzmy $\varepsilon > 0$ taki, że $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$ oraz oznaczmy 
-  $c^{\ast} = \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że $\norm{\lambda - \lambda_0} < 
-  \delta_{\varepsilon}$. Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym zachodzi:
-  \[
+%
+  Wybierzmy $\varepsilon > 0$ taki, że 
+  $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$
+  oraz oznaczmy $c^{\ast} = \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że
+  $\norm{\lambda - \lambda_0} < \delta_{\varepsilon}$.
+  Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym zachodzi:
+%
+  \begin{equation*}
     \forall t \in J \quad \p[\big]{ y(t,\lambda), t } \in R_b.
-  \]
+  \end{equation*}
+%
   Wtedy z lematu \ref{L: Kluczowy} dostajemy:
-  \[
+%
+  \begin{equation*}
     \forall t \in J \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \frac b2.
-  \]
+  \end{equation*}
+%
   Przypuśćmy, że jeden z końców $J$, nazwijmy go $\alpha$, należy do wnętrza $I$. Wówczas z twierdzenia \ref{T: TOPK}, 
   $y(t,\lambda)$ przedłuża się na przedział $\widetilde{J}$ zawierający $\alpha$ we wnętrzu. Co więcej, ponieważ 
   $\norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }$ jest funkcją ciągłą względem $t$, to pozostaje mniejsza od $b$ na 
   pewnym otoczeniu $\alpha$. Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc pierwszą 
   część tezy.
   
-  Jeśli $\lambda_n \to \lambda_0$, to z założenia drugiego istnieje ciąg $\varepsilon_n \to 0$ taki, że
-  \[
+  Jeśli $\lambda_n \to \lambda_0$, to z założenia \ref{b} istnieje ciąg $\varepsilon_n \to 0$ taki, że
+%
+  \begin{equation*}
     \forall (y,t) \in R_b \ \forall n \quad \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n.
-  \]
+  \end{equation*}
+%
   Z lematu \ref{L: Kluczowy} dostajemy:
-  \[
+%
+  \begin{equation*}
     \forall t \in I \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq
     \varepsilon_n \cdot \abs{I} \cdot e^{L \abs{I}} \xrightarrow{n\to\infty} 0,
-  \]
+  \end{equation*}
+%
   co dowodzi drugiej części tezy.
 \end{proof}
 

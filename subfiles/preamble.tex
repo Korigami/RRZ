@@ -1,6 +1,6 @@
 %!TEX root = ../RRZ.tex
 
-\documentclass{mwrep}
+\documentclass[titleauthor]{mwrep}
 
 \usepackage[utf8]{inputenc}
 
@@ -9,37 +9,53 @@
 \usepackage{lmodern}
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
-    \numberwithin{equation}{section}
+  \numberwithin{equation}{section}
 
 \usepackage{mathtools}
-    \DeclarePairedDelimiter\abs{\lvert}{\rvert}
-    \DeclarePairedDelimiter\norm{\lVert}{\rVert}
-    \DeclarePairedDelimiter\p{(}{)}
-    \DeclareMathOperator{\Domain}{Dm}
-    \DeclareMathOperator{\spectre}{sp}
+  \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+  \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+  \DeclarePairedDelimiter\p{(}{)}
+  \DeclareMathOperator{\real}{Re}
+  \DeclareMathOperator{\imag}{Im}
+  \DeclareMathOperator{\domain}{Dm}
+  \DeclareMathOperator{\spectrum}{sp}
 
 \usepackage{thmtools}
-    \declaretheoremstyle[
-      spaceabove = \topsep,
-      spacebelow = \topsep,
-      headfont   = \bfseries,
-      notefont   = \bfseries,
-      notebraces = {(}{)},
-      bodyfont   = \normalfont,
-    ]{mystyle}
-    
-    \let\proof\relax
-    
-    \declaretheorem[style = mystyle, name = Twierdzenie,   parent  = section]{theorem}
-    \declaretheorem[style = mystyle, name = Stwierdzenie, sibling  = theorem]{statement}
-    \declaretheorem[style = mystyle, name = Lemat,        sibling  = theorem]{lemma}
-    \declaretheorem[style = mystyle, name = Definicja,    sibling  = theorem]{definition}
-    \declaretheorem[style = mystyle, name = Wniosek,      sibling  = theorem]{conclusion}
-    \declaretheorem[style = mystyle, name = Przykład,     sibling  = theorem]{example}
-    \declaretheorem[style = mystyle, name = Dowód,        numbered = no, qed = \ensuremath{\blacksquare}]{proof}
-    \declaretheorem[style = mystyle, name = Dowód,        numbered = no, qed = \ensuremath{\square}]{nestedproof}
+  \declaretheoremstyle[
+    spaceabove = \topsep,
+    spacebelow = \topsep,
+    headfont   = \bfseries,
+    notefont   = \bfseries,
+    notebraces = {(}{)},
+    bodyfont   = \normalfont,
+  ]{normal}
+  
+  \declaretheoremstyle[
+    spaceabove = \topsep,
+    spacebelow = \topsep,
+    headfont   = \scshape,
+    notefont   = \scshape,
+    notebraces = {(}{)},
+    bodyfont   = \normalfont,
+  ]{nested}
+  
+  \let\proof\relax
+  
+  \declaretheorem[style = normal, name = Twierdzenie,   parent  = section]{theorem}
+  \declaretheorem[style = normal, name = Stwierdzenie, sibling  = theorem]{statement}
+  \declaretheorem[style = normal, name = Lemat,        sibling  = theorem]{lemma}
+  \declaretheorem[style = normal, name = Definicja,    sibling  = theorem]{definition}
+  \declaretheorem[style = normal, name = Wniosek,      sibling  = theorem]{conclusion}
+  \declaretheorem[style = normal, name = Przykład,     sibling  = theorem]{example}
+  \declaretheorem[style = normal, name = Dowód,        numbered = no, qed = \ensuremath{\blacksquare}]{proof}
+  
+  \declaretheorem[style = nested, name = Lemat,  sibling = theorem]{nestedlemma}
+  \declaretheorem[style = nested, name = Dowód, numbered = no, qed = \ensuremath{\square}]{nestedproof}
 
 \usepackage{parskip}
+
+\usepackage{enumitem}
+  \setlist{leftmargin=0.75cm}
 
 \newcommand*{\R}{\mathbb{R}}
 \newcommand*{\N}{\mathbb{N}}
@@ -59,8 +75,6 @@
 }
 \author{ KJG }
 \date{ Wersja z \today }
-
-
 
 
 

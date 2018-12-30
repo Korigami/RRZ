@@ -1,0 +1,65 @@
+%!TEX root = ../RRZ.tex
+%
+\begin{definition}
+  \emph{Wykładnikiem Lapunowa} macierzy $A$ nazywamy liczbę
+  %
+  \begin{equation*}
+    \overline{\lambda} = \max \{ \real \lambda_k : k = 1, \ldots, n \}.
+  \end{equation*}
+  %
+\end{definition}
+%
+\begin{definition}
+  \emph{Potęgą Lapunowa} macierzy $A$ nazywamy liczbę
+  %
+  \begin{equation*}
+    \overline{l} = \max \bigl\{ l \geq 0 : \exists k \in \{1,\ldots,n\} \quad \real \lambda_k = \overline{\lambda} 
+    \ \wedge \ M_{k,l} \not= 0 \bigr\}.
+  \end{equation*}
+  %
+\end{definition}
+%
+\begin{theorem}
+  Dla każdej macierzy $A$ zachodzą nierówności:
+  \begin{equation*}
+    0 < \liminf_{t\to\infty} \frac{\norm*{e^{At}}}{t^{\overline{l}} e^{\overline{\lambda} t}} \leq
+    \limsup_{t\to\infty} \frac{\norm*{e^{At}}}{t^{\overline{l}} e^{\overline{\lambda} t}} < \infty.
+  \end{equation*}
+  %
+\end{theorem}
+%
+\begin{proof}
+  Łatwe.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
