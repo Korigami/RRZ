@@ -24,7 +24,8 @@
       \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1-y_2},
     \end{equation*}
 %
-    \item\label{b} dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ oraz każdej $\lambda$ jest:
+    \item \label{zalozenieb} dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ oraz każdej 
+    $\lambda$ jest:
 %
     \begin{equation*}
       \norm{\lambda - \lambda_0} < \delta \implies \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon.
@@ -46,7 +47,7 @@
 %
   \begin{nestedlemma} \label{L: Kluczowy}
 %
-    Przy założeniach twierdzenia przypuśćmy, że na $J \subset I$ zachodzi
+    Przy założeniach twierdzenia przypuśćmy, że na $J \subset I$ mamy
 %
     \begin{enumerate}
       \item dla wszystkich $t \in J$ jest $\p[\big]{y(t,\lambda),t} \in R_b$,
@@ -84,8 +85,7 @@
 %
   \end{nestedproof}
 %
-  Wybierzmy $\varepsilon > 0$ taki, że 
-  $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$
+  Wybierzmy $\varepsilon > 0$ taki, że $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$
   oraz oznaczmy $c^{\ast} = \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że
   $\norm{\lambda - \lambda_0} < \delta_{\varepsilon}$.
   Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym zachodzi:
@@ -106,7 +106,7 @@
   pewnym otoczeniu $\alpha$. Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc pierwszą 
   część tezy.
   
-  Jeśli $\lambda_n \to \lambda_0$, to z założenia \ref{b} istnieje ciąg $\varepsilon_n \to 0$ taki, że
+  Jeśli $\lambda_n \to \lambda_0$, to z założenia \ref{zalozenieb} istnieje ciąg $\varepsilon_n \to 0$ taki, że
 %
   \begin{equation*}
     \forall (y,t) \in R_b \ \forall n \quad \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n.

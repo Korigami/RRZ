@@ -1,35 +1,34 @@
 %!TEX root = ../RRZ.tex
-
+%
 \begin{theorem}[O różniczkowalnej zależności od parametru]
   Niech
-  %
+%
   \begin{equation*}
     y' = f(y,t,\lambda), \qquad
     f \colon \R^{m+1} \times \R \supset U \times (\lambda_0 - c, \lambda_0 + c) \longrightarrow \R^m,
   \end{equation*}
-  %
+%
   gdzie $f$ jest funkcją ciągłą względem $y,t,\lambda$ oraz klasy $C^1$ względem $y,\lambda$. Ustalmy warunek 
   początkowy $(y_0,t_0)$ i oznaczmy przez $y(t,\lambda)$ rozwiązanie równania
-  %
+%
   \begin{equation*}
     \frac{\partial y(t,\lambda)}{\partial t} = f(y,t,\lambda)
   \end{equation*}
-  %
+%
   z warunkiem początkowym $y(t_0,\lambda) = y_0$, określone na ustalonym i \emph{zwartym} przedziale $I$. Wówczas na 
   przedziale $I$ istnieje ciągła funkcja
-  %
+%
   \begin{equation*}
     z(t,\lambda_0) = \frac{\partial y(t,\lambda)}{\partial \lambda} \Big\vert_{\lambda = \lambda_0}
   \end{equation*}
-  %
+%
   oraz zachodzi równość
-  %
+%
   \begin{equation*}
     \frac{\partial z(t,\lambda_0)}{\partial t} =
     \frac{\partial^2 y(t,\lambda)}{\partial t \partial \lambda} \Big\vert_{\lambda = \lambda_0} =
     \frac{\partial^2 y(t,\lambda)}{\partial \lambda \partial t} \Big\vert_{\lambda = \lambda_0}.
   \end{equation*}
-  %
 \end{theorem}
 
 \begin{proof}

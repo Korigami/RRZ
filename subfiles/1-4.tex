@@ -1,7 +1,7 @@
 %!TEX root = ../RRZ.tex
 %
 \begin{definition}
-  \emph{Widmem} macierzy $A$ nazywamy zbiór jej wartości własnych wraz z krotnościami, i oznaczamy $\spectrum (A)$.
+  \emph{Widmem} macierzy $A$ nazywamy zbiór jej wartości własnych wraz z krotnościami i oznaczamy $\spectrum (A)$.
 \end{definition}
 %
 \begin{theorem}[Hamilton-Cayley] \label{T: H-C}
@@ -12,79 +12,80 @@
   Niech $A$ będzie macierzą o wartościach własnych $\lambda_1,\ldots,\lambda_n$ z krotnościami $q_1,\ldots,q_n$. Wtedy 
   istnieją macierze $M_{k,l}$ dla $1 \leq k \leq n$, $0 \leq l \leq q_k-1$, zwane \emph{spektralnymi} takie, że dla 
   każdego wielomianu $f$ zachodzi:
+%
   \begin{equation*}
-    f(A) = \sum_{k=1}^{n} \sum_{l=0}^{q_k-1} M_{k,l} \cdot f^{(l)}(\lambda_j).
+    f(A) = \sum_{k=1}^{n} \sum_{l=0}^{q_k-1} M_{k,l} \cdot f^{(l)}(\lambda_k).
   \end{equation*}
 \end{theorem}
 %
 \begin{proof}
   W celu udowodnienia twierdzenia będzie potrzebny lemat pomocniczy.
-  %
-  \begin{nestedlemma} \label{L: zetdoer}
+%
+  \begin{nestedlemma} \label{L: 1.4.2}
     Macierze $M_{k,l}$ są jednoznacznie wyznaczone przez tezę twierdzenia spektralnego dla
     $f(z) = z^r$, $r = 0, \ldots, n-1$.
   \end{nestedlemma}
-  %
+%
   \begin{nestedproof}
     Otrzymujemy układ równań z niewiadomymi $M_{k,l}$, czyli
-    %   
+%   
     \begin{equation*}
       A^r = \sum_{k=1}^n \sum_{l=0}^{q_k-1} M_{k,l} \cdot r (r-1) \cdots (r-l+1) \cdot \lambda_k^{r-l} c_r = 0.
     \end{equation*}
-    %   
+%   
     Teza lematu oznacza, że układ ten jest oznaczony. Pokażemy liniową niezależność wierszy. Wybierzmy współczynniki 
     $c_r$ dla $r = 1, \ldots, n-1$, tak aby kombinacja liniowa wierszy z tymi współczynnikami wynosiła $0$, czyli dla
     każdych $k = 1,\ldots,n$ oraz $l = 0, \ldots, q_k-1$ jest
-    %   
+%   
     \begin{equation*}
       \sum_{r=0}^{n-1} c_r \cdot r (r-1) \cdots (r-l+1) \lambda_k^{r-l} = 0.
     \end{equation*}
-    %
+%
     Rozważmy wielomian $w(z) = \sum_{r=0}^{n-1} c_r z^r$. Otrzymaliśmy, że $w^{(l)}(\lambda_k) = 0$, czyli 
     $\lambda_k$ jest zerem z krotnością co najmniej $q_k$, a zatem suma krotności zer wielomianu $w$ jest równa co 
     najmniej $\sum_{k=1}^n q_k = n$, co jest sprzecznością, bo stopień wielomianu był co najwyżej $n-1$.
   \end{nestedproof}
-  %
+%
   Twierdzenie zostanie udowodnione indukcyjnie ze względu na stopień $f$.
   
   Przypuśćmy, że twierdzenie zachodzi dla wielomianów stopnia mniejszego od $n+r$, gdzie $r \geq 0$. Z lematu 
-  \ref{L: zetdoer} teza zachodzi dla $r=0$. Zwróćmy uwagę, że obie strony twierdzenia są liniowe względem $f$. 
+  \ref{L: 1.4.2} teza zachodzi dla $r=0$. Zwróćmy uwagę, że obie strony twierdzenia są liniowe względem $f$. 
   Wystarczy więc pokazać je dla układu rozpinającego przestrzeń wielomianów stopnia mniejszego niż $n+r$. W~celu 
   pokazania, że twierdzenia zachodzi również dla wielomianów stopnia $n+r$, wystarczy pokazać dla $f_r(z) = z^r 
   \mychi_A(z)$, bo każdy wielomian
-  %
+%
   \begin{equation*}
     f(z) = a_{n+r} z^{n+r} + \ldots + a_1 z + a_0
   \end{equation*}
-  %
+%
   można zapisać jako
-  %
+%
   \begin{equation*}
     f(z) = f_r(z) + P(z),
   \end{equation*}
-  %
+%
   gdzie $P$ jest wielomianem stopnia mniejszego niż $n+r$. Zauważmy, że
-  %
+%
   \begin{equation*}
     L = f_r(A) = A^r \cdot \mychi_A(A) \overset{\ref{T: H-C}}{=} 0, \qquad 
     P = \sum_{k=1}^n \sum_{l=0}^{q_k-1} M_{k,l} \cdot f^{(l)}(\lambda_k),
   \end{equation*}
-  %
+%
   a ponadto $f_r(z) = (z-\lambda_k)^{q_k} \cdot Q(z)$. Pochodne rzędu niższego od $q_k$ składają się z sum członów, w 
   których $(z-\lambda_k)$ występuje w dowolnej potędze, więc zerują się przy podstawieniu $z=\lambda_k$.
-  %
+%
 \end{proof}
 %
 \begin{theorem}[Spektralne dla funkcji analitycznych]
   Niech
-  %
+%
   \begin{equation*}
     f(z) = \sum_{n=0}^{\infty} a_n z^n, \quad \abs{z} < R.
   \end{equation*}
-  %
+%
   Załóżmy, że $\spectrum(A) \subset D(0,R)$. Wówczas szereg $f(A)$ zbiega i zachodzi teza twierdzenia spektralnego dla 
   wielomianów:
-  %
+%
   \begin{equation*}
     f(A) = \sum_{k=1}^{n} \sum_{l=0}^{q_k-1} M_{k,l} \cdot f^{(l)}(\lambda_j).
   \end{equation*}
@@ -92,11 +93,13 @@
 %
 \begin{proof}
   Oznaczmy
-  %
+%
   \begin{equation*}
     f_N(z) = \sum_{n=0}^N a_n z^n.
   \end{equation*}
+%
   Korzystając z twierdzenia spektralnego dla wielomianów, dostajemy
+%
   \begin{multline*}
     f(A) = \lim_{N\to\infty} f_N(A) 
     = \lim_{N\to\infty} \sum_{k=1}^{n} \sum_{l=0}^{q_k-1} M_{k,l} \cdot f_N^{(l)}(\lambda_j) = \\

@@ -1,66 +1,105 @@
 %!TEX root = ../RRZ.tex
-
+%
 \begin{theorem}[Peano]
   Niech $y' = f(y,t)$, gdzie $y(t_0) = y_0$ oraz
-  \[
+%
+  \begin{equation*}
     f \colon H = \overline{B} (y_0, b) \times [t_0 - a, t_0 + a] \longrightarrow \R^m.
-  \]
+  \end{equation*}
+%
   Załóżmy, że funkcja $f$ jest ciągła i oznaczmy
-  \[
+%
+  \begin{equation*}
     M = \sup \big\{ \norm[\big]{f(y,t)} : (y, t) \in H \big\}.
-  \]
-  Wówczas dla $\alpha = \min(a, b/M)$ istnieje rozwiązanie $y(t)$ określone na
-  przedziale $[t_0 - \alpha, t_0 + \alpha]$, spełniające warunek początkowy $y(t_0) = y_0$.
+  \end{equation*}
+%
+  Wówczas dla $\alpha = \min(a, b/M)$ istnieje rozwiązanie $y(t)$ określone na przedziale
+  $[t_0 - \alpha, t_0 + \alpha]$, spełniające warunek początkowy $y(t_0) = y_0$.
 \end{theorem}
-
+%
 \begin{theorem}[Picard-Lindelöf]
   Niech $y' = f(y,t)$, $y(t_0) = y_0$, gdzie
-  \[
+%
+  \begin{equation*}
     f \colon H = \overline{B} (y_0, b) \times [t_0 - a, t_0 + a] \longrightarrow \R^m.
-  \]
+  \end{equation*}
+%
   Załóżmy, że funkcja $f$ jest ciągła oraz lipszycowska ze względu na $y$, to znaczy
-  \[
-    \exists L \ \forall (y_1,t), (y_2,t) \in H \quad
-    \norm[\big]{f(y_1,t) - f(y_2,t)} \leq L \cdot \norm{y_1 - y_2}.
-  \]
+%
+  \begin{equation*}
+    \exists L \ \forall (y_1,t), (y_2,t) \in H \quad \norm[\big]{f(y_1,t) - f(y_2,t)} \leq L \cdot \norm{y_1 - y_2}.
+  \end{equation*}
+%
   Oznaczmy ponadto
-  \[
+%
+  \begin{equation*}
     M = \sup \big\{ \norm[\big]{f(y,t)} : (y, t) \in H \big\}.
-  \]
-  Wówczas dla dowolnego $\alpha < \min(a, b/M, 1/L)$ istnieje dokładnie jedno rozwiązanie
-  zagadnienia Cauchy'ego z warunkiem początkowym $y(t_0) = y_0$ określone na przedziale
-  $[t_0 - \alpha, t_0 + \alpha]$.
+  \end{equation*}
+%
+  Wówczas dla dowolnego $\alpha < \min(a, b/M, 1/L)$ istnieje dokładnie jedno rozwiązanie zagadnienia Cauchy'ego z 
+  warunkiem początkowym $y(t_0) = y_0$ określone na przedziale $[t_0 - \alpha, t_0 + \alpha]$.
 \end{theorem}
 
 \begin{lemma}[o zgodności rozwiązań]
-  Niech $y' = f(y,t)$, gdzie funkcja $f \colon U \to \R^m$ jest ciągła i lokalnie lipszycowska
-  względem $y$. Niech $(y_0,t_0) \in U$. Jeśli $y_1(t), y_2(t)$ są rozwiązaniami określonymi
-  odpowiednio na $I_1, I_2$, spełniającymi ten sam warunek początkowy $y_1(t_0) = y_2(t_0) = y_0$,
-  to $y_1 \equiv y_2$ na $I_1 \cap I_2$.
+  Niech $y' = f(y,t)$, gdzie funkcja $f \colon U \to \R^m$ jest ciągła i lokalnie lipszycowska względem $y$. Niech 
+  $(y_0,t_0) \in U$. Jeśli $y_1(t), y_2(t)$ są rozwiązaniami określonymi odpowiednio na $I_1, I_2$, spełniającymi ten 
+  sam warunek początkowy $y_1(t_0) = y_2(t_0) = y_0$, to $y_1 \equiv y_2$ na $I_1 \cap I_2$.
 \end{lemma}
 
 \begin{lemma}[o przedłużaniu przez koniec]
-  Niech $y' = f(y,t)$, gdzie funkcja $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie
-  lipszycowska względem $y$. Niech $y(t)$ -- rozwiązanie, $T$ -- koniec $\domain y$, granica
-  $\lim_{t \to T} y(t) = y_T$ istnieje oraz $(y_T, T) \in U$. Wówczas $y$ rozszerza się na przedział
-  zawierający $T$ we wnętrzu.
+  Niech $y' = f(y,t)$, gdzie funkcja $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie lipszycowska 
+  względem $y$. Niech $y(t)$ -- rozwiązanie, $T$ -- koniec $\domain y$, granica $\lim_{t \to T} y(t) = y_T$ istnieje 
+  oraz $(y_T, T) \in U$. Wówczas $y$ rozszerza się na przedział zawierający $T$ we wnętrzu.
 \end{lemma}
 
 \begin{theorem}[o przedłużaniu przez koniec] \label{T: TOPK}
-  Niech $y' = f(y,t)$, gdzie $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie
-  lipszycowska względem $y$. Załóżmy, że rozwiązanie $y(t)$ jest określone na pewnym przedziale,
-  którego końcem jest $T \in \R$. Załóżmy dalej, że istnieje zbiór zwarty $K \subset U$ oraz
-  $\varepsilon > 0$, taki, że
-  \[
+  Niech $y' = f(y,t)$, gdzie $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie lipszycowska względem $y$. 
+  Załóżmy, że rozwiązanie $y(t)$ jest określone na pewnym przedziale, którego końcem jest $T \in \R$. Załóżmy dalej, że 
+  istnieje zbiór zwarty $K \subset U$ oraz $\varepsilon > 0$, taki, że
+%
+  \begin{equation*}
     \forall t \in \domain y \cap [T - \varepsilon, T + \varepsilon] \quad \p[\big]{y(t), t} \in K.
-  \]
+  \end{equation*}
+%
   Wtedy $y$ rozszerza się na przedział zawierający $T$ we wnętrzu.
 \end{theorem}
-
+%
 \begin{theorem}[o rozwiązaniu wysyconym]
-  Niech $y' = f(y,t)$, gdzie funkcja $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie
-  lipszycowska względem $y$ oraz $(y_0, t_0) \in U$. Wówczas istnieje rozwiązanie $y_{\mathrm{max}}$ zwane
-  \emph{wysyconym}, określone na przedziale otwartym, spełniające warunek początkowy $y_{\mathrm{max}}(t_0)
-  = y_0$ i takie, że jeśli $y$ jest dowolnym rozwiązaniem spełniającym warunek $y(t_0) = y_0$, to
-  $\domain y \subset \domain y_{\mathrm{max}}$ oraz $y$ jest obcięciem $y_{\mathrm{max}}$.
+  Niech $y' = f(y,t)$, gdzie funkcja $f \colon \R^{m+1} \supset U \to \R^m$ jest ciągła i lokalnie lipszycowska 
+  względem $y$ oraz $(y_0, t_0) \in U$. Wówczas istnieje rozwiązanie $y_{\mathrm{max}}$ zwane \emph{wysyconym}, 
+  określone na przedziale otwartym, spełniające warunek początkowy $y_{\mathrm{max}}(t_0)= y_0$ i takie, że jeśli $y$ 
+  jest dowolnym rozwiązaniem spełniającym warunek $y(t_0) = y_0$, to $\domain y \subset \domain y_{\mathrm{max}}$ oraz 
+  $y$ jest obcięciem $y_{\mathrm{max}}$.
 \end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
