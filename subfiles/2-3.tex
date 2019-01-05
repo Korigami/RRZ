@@ -1,32 +1,125 @@
 %!TEX root = ../RRZ.tex
 %
 \begin{definition}
-  Równaniem liniowym nazywamy równanie postaci
-  %
+  \emph{Równaniem liniowym} nazywamy równanie postaci
+%
   \begin{equation*}
-    \frac{dy}{dt} = A(t)y + B(t),
+    y' = A(t)y + B(t),
   \end{equation*}
-  %
-  gdzie $A(t)$ jest macierzą $m \times m$, a $B(t)$ wektorem z $\R^m$ o ciągłych współczynnikach, określonym na 
-  przedziale otwartym $I \subset \R$.
+%
+  gdzie $A(t)$ jest macierzą $m \times m$, $B(t)$ wektorem z $\R^m$, a ich współczynniki są funkcjami ciągłymi 
+  określonymi na przedziale otwartym $I \subset \R$.
 \end{definition}
 %
+\begin{lemma}
+  Dla dowolnego warunku początkowego $(y_0,t_0)$, gdzie $y_0 \in \R^m$ oraz $t_0 \in I$, dziedziną rozwiązania 
+  wysyconego jest $I$.
+\end{lemma}
+%
 \begin{definition}
-  Równanie $y' = A(t)y$ nazywamy \emph{jednorodnym}, a równanie $y' = A(t)y + B(t)$ (odpowiadającym) niejednorodnym.
+  Równanie $y' = A(t)y$ nazywamy \emph{jednorodnym}, a równanie $y' = A(t)y + B(t)$ (odpowiadającym) 
+  \emph{niejednorodnym}.
 \end{definition}
-
+%
 \begin{theorem}
   Zbiór rozwiązań równania jednorodnego jest podprzestrzenią liniową $C^0(I,\R^m)$, a zbiór rozwiązań równania 
   niejednorodnego jej warstwą.
 \end{theorem}
+%
+Niech $V$ oznacza zbiór rozwiązań wysyconych równania $y' = A(t)y$.
+%
+\begin{statement}
+  Niech $\{y_1, \ldots, y_n\} \subset V$. Poniższe warunki są równoważne:
+%
+  \begin{enumerate}
+    \item Zbiór $\{y_1, \ldots, y_n\}$ jest liniowo niezależny.
+    \item Dla dowolnego $t \in I$ zbiór $\big\{y_1(t), \ldots, y_n(t)\big\}$ jest liniowo niezależny w $\R^m$.
+    \item Istnieje $t \in I$, że zbiór $\big\{y_1(t), \ldots, y_n(t)\big\}$ jest liniowo niezależny w $\R^m$.
+  \end{enumerate}
+\end{statement}
+%
+\begin{statement}
+  Niech $\{y_1, \ldots, y_k\} \subset V$. Wtedy
+%
+  \begin{enumerate}
+    \item Jeśli $\{y_1, \ldots, y_k\}$ jest liniowo niezależny, to $k \leq m$.
+    \item Jeśli $\{y_1, \ldots, y_k\}$ rozpina $V$, to $k \geq m$.
+  \end{enumerate}
+\end{statement}
+%
+\begin{conclusion}
+  $\dim V = m$.
+\end{conclusion}
+%
+\begin{definition}
+  \emph{Układem fundamentalnym} nazwiemy dowolną bazę $V$.
+\end{definition}
+%
+\begin{definition}
+  \emph{Macierzą rozwiązującą} będziemy nazywali macierz, której kolumny tworzą układ fundamentalny.
+\end{definition}
+%
+\begin{statement}
+  $M(t)$ jest macierzą rozwiązującą wtedy i tylko wtedy, gdy jest nieosobliwa dla każdego (równoważnie pewnego)
+  $t \in I$ oraz spełnia
+%
+  \begin{equation*}
+    \frac{d}{dt} M(t) = A(t) \cdot M(t).
+  \end{equation*}
+\end{statement}
+%
+\begin{remark}
+  Jeśli $M(t)$ jest macierzą rozwiązującą, a $P$ macierzą o~$m$~wierszach i stałych współczynnikach, to
+%
+  \begin{equation*}
+    \frac{d}{dt} M(t) P = A(t) M(t) P.
+  \end{equation*}
+%
+  Jeśli $P$ jest nieosobliwa, to $M(t)P$ jest macierzą rozwiązującą.
+%
+  \begin{equation*}
+    \frac{d}{dt} M(t)P = \frac{d M(t)}{dt} P = A(t) M(t) P = A(t) \p[\big]{M(t) P}.
+  \end{equation*}
+%
+  Jeśli $\mathcal{C} \in \R^m$, to $\mathcal{C} \cdot M(t)$ jest rozwiązaniem ogólnym.
+  
+  Jeśli $M(t)$ jest macierzą rozwiązującą, zaś $t_0 \in I$, to 
+  \begin{equation*}
+    M(t, t_0) = M(t) \cdot \big[ M(t_0) \big]^{-1}
+  \end{equation*}
+%
+  jest macierzą rozwiązującą oraz $M(t_0,t_0) = E$. Ponadto $M(t_0,t_0) y_0$ jest rozwiązaniem równania z warunkiem 
+  początkowym $y(t_0) = y_0$.
+\end{remark}
 
-\noindent Niech $V$ oznacza zbiór rozwiązań wysyconych równania $y' = A(t)y$.
 
-%\begin{statement}
-%  Następujące warunki są równoważne dla zbioru $\{y_1, \ldots, y_n\} \subset V$:
-%  \begin{enumerate}
-%    \item Zbiór jest liniowo niezależny.
-%    \item Dla dowolnego $t \in I$ zbiór $\big\{y_1(t), \ldots, y_n(t)\big\}$ jest liniowo niezależny w $\R^m$.
-%    \item Istnieje $t \in I$, że zbiór $\big\{y_1(t), \ldots, y_n(t)\big\}$ jest liniowo niezależny w $\R^m$.
-%  \end{enumerate}
-%\end{statement}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
