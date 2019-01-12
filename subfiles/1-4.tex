@@ -23,7 +23,7 @@
 %
   \begin{nestedlemma} \label{L: 1.4.2}
     Macierze $M_{k,l}$ są jednoznacznie wyznaczone przez tezę twierdzenia spektralnego dla
-    $f(z) = z^r$, $r = 0, \ldots, n-1$.
+    wielomianów postaci $f(z) = z^r$, gdzie $r = 0, \ldots, m-1$, a~$m$ jest stopniem wielomianu $f$.
   \end{nestedlemma}
 %
   \begin{nestedproof}
@@ -34,37 +34,43 @@
     \end{equation*}
 %   
     Teza lematu oznacza, że układ ten jest oznaczony. Pokażemy liniową niezależność wierszy. Wybierzmy współczynniki 
-    $c_r$ dla $r = 0, \ldots, n-1$, tak aby kombinacja liniowa wierszy z tymi współczynnikami wynosiła $0$, czyli dla
+    $c_r$ dla $r = 0, \ldots, m-1$, tak aby kombinacja liniowa wierszy z tymi współczynnikami wynosiła $0$, czyli dla
     każdych $k = 1,\ldots,n$ oraz $l = 0, \ldots, q_k-1$ jest
 %   
     \begin{equation*}
-      \sum_{r=0}^{n-1} c_r \cdot r (r-1) \cdots (r-l+1) \lambda_k^{r-l} = 0.
+      \sum_{r=0}^{m-1} c_r \cdot r (r-1) \cdots (r-l+1) \lambda_k^{r-l} = 0.
     \end{equation*}
 %
-    Rozważmy wielomian $w(z) = \sum_{r=0}^{n-1} c_r z^r$. Otrzymaliśmy, że $w^{(l)}(\lambda_k) = 0$, czyli 
+    Rozważmy teraz wielomian
+%    
+    \begin{equation*}
+      w(z) = \sum_{r=0}^{m-1} c_r z^r.
+    \end{equation*}
+%
+    Otrzymaliśmy, że $w^{(l)}(\lambda_k) = 0$, czyli 
     $\lambda_k$ jest zerem z krotnością co najmniej $q_k$, a zatem suma krotności zer wielomianu $w$ jest równa co 
-    najmniej $\sum_{k=1}^n q_k = n$, co jest sprzecznością, bo stopień wielomianu był co najwyżej $n-1$.
+    najmniej $\sum_{k=1}^n q_k = m$, co jest sprzecznością, bo stopień wielomianu był co najwyżej $m-1$.
   \end{nestedproof}
 %
   Twierdzenie zostanie udowodnione indukcyjnie ze względu na stopień $f$.
   
-  Przypuśćmy, że twierdzenie zachodzi dla wielomianów stopnia mniejszego od $n+r$, gdzie $r \geq 0$. Z lematu 
+  Przypuśćmy, że twierdzenie zachodzi dla wielomianów stopnia mniejszego od $m+r$, gdzie $r \geq 0$. Z lematu 
   \ref{L: 1.4.2} teza zachodzi dla $r=0$. Zwróćmy uwagę, że obie strony twierdzenia są liniowe względem $f$. 
-  Wystarczy więc pokazać je dla układu rozpinającego przestrzeń wielomianów stopnia mniejszego niż $n+r$. W~celu 
-  pokazania, że twierdzenia zachodzi również dla wielomianów stopnia $n+r$, wystarczy pokazać dla $f_r(z) = z^r 
+  Wystarczy więc pokazać je dla układu rozpinającego przestrzeń wielomianów stopnia mniejszego niż $m+r$. W~celu 
+  pokazania, że twierdzenie zachodzi również dla wielomianów stopnia $m+r$, wystarczy pokazać dla $f_r(z) = z^r 
   \mychi_A(z)$, bo każdy wielomian
 %
   \begin{equation*}
-    f(z) = a_{n+r} z^{n+r} + \ldots + a_1 z + a_0
+    f(z) = a_{m+r} z^{m+r} + \ldots + a_1 z + a_0
   \end{equation*}
 %
   można zapisać jako
 %
   \begin{equation*}
-    f(z) = f_r(z) + P(z),
+    f(z) = a_{m+r} f_r(z) + P(z),
   \end{equation*}
 %
-  gdzie $P$ jest wielomianem stopnia mniejszego niż $n+r$. Zauważmy, że
+  gdzie $P$ jest wielomianem stopnia mniejszego niż $m+r$. Zauważmy, że
 %
   \begin{equation*}
     L = f_r(A) = A^r \cdot \mychi_A(A) \overset{\ref{T: H-C}}{=} 0, \qquad 

@@ -17,17 +17,93 @@
   \end{equation*}
 \end{definition}
 %
+\begin{lemma}[Wzór Leibniza]
+  \begin{equation} \label{Leibniz}
+    D^n(fg) = \sum_{k=0}^n \binom{n}{k} D^k f \cdot D^{n-k} g.
+  \end{equation}
+\end{lemma}
+%
 \begin{theorem}
   Dla każdej macierzy $A$ zachodzą nierówności:
 %
   \begin{equation*}
-    0 < \liminf_{t\to\infty} \frac{\norm*{e^{At}}}{t^{\overline{l}} e^{\overline{\lambda} t}} \leq
-    \limsup_{t\to\infty} \frac{\norm*{e^{At}}}{t^{\overline{l}} e^{\overline{\lambda} t}} < \infty.
+    0 < \liminf_{t\to\infty} \frac{ \norm{e^{At}} }{ t^{\overline{l}} e^{\overline{\lambda} t} } \leq
+    \limsup_{t\to\infty} \frac{ \norm{e^{At}} }{ t^{\overline{l}} e^{\overline{\lambda} t} } < \infty.
   \end{equation*}
 \end{theorem}
 %
 \begin{proof}
-  Łatwe.
+  Nierówność środkowa jest oczywista. Zaczniemy wobec tego od prawej.
+%
+  \begin{align*}
+    \limsup_{t\to\infty} \frac{ \norm{e^{At}} }{ t^{\overline{l}} e^{\overline{\lambda} t}} &=
+    \limsup_{t\to\infty} \frac{\norm*{\sum\limits_{k=1}^n \sum\limits_{l=0}^{q_k - 1} M_{k,l} \cdot t^l e^{\lambda_k 
+    t}}}{t^{\overline{l}} \exp(\overline{\lambda}t)} \\ &\leq
+    \sum_{k=1}^n \sum_{l=0}^{q_k-1} \norm{M_{k,l}} \cdot \limsup_{t\to\infty} \frac{t^l e^{(\real \lambda_k) 
+    t}}{t^{\overline{l}} e^{\overline{\lambda}t}} \\ &=
+    \sum_{k=1}^n \sum_{l=0}^{q_k-1} \norm{M_{k,l}} \cdot \limsup_{t\to\infty} t^{l-\overline{l}} e^{(\real \lambda_k - 
+    \overline{\lambda}) t}
+  \end{align*}
+%
+  Zauważmy, że $\real \lambda_k - \overline{\lambda} \leq 0$, a jeśli $\real \lambda_k - \overline{\lambda} = 0$ oraz 
+  $M_{k,l} \not= 0$, to $l \leq \overline{l}$. Wobec tego, dla każdej kombinacji $k$ i $l$ jest
+%
+  \begin{equation*}
+    \limsup_{t\to\infty} t^{l-\overline{l}} \exp \p[\big]{(\real \lambda_k - \overline{\lambda}) t} \leq 1.
+  \end{equation*}
+%
+  Bez utraty ogólności możemy przyjąć $\overline{\lambda} = \lambda_1$, $M_{1,\overline{l}} \not= 0$ oraz
+%
+  \begin{equation*}
+    w(z) = \prod_{k=2}^{n} (z-\lambda_k)^{q_k} = \frac{\mychi_A(z)}{(z-\lambda_1)^{q_1}}.
+  \end{equation*}
+%
+  Niech $f(z) = w(z) \cdot e^{zt}$. Wtedy dla $k>0$ oraz $l<q_k$ jest $f^{(l)}(\lambda_k) = 0$, bo pochodna jest sumą 
+  członów ze wzoru \eqref{Leibniz}, gdzie $(z-\lambda_k)$ występuje w~potędze dodatniej. Niechaj teraz $k=1$ oraz 
+  $\varphi(z) = e^{zt}$, $\psi(z) = w(z)$. Wtedy
+%
+  \begin{equation*}
+    (\varphi \cdot \psi)^{(l)} (\lambda_1) = \sum_{i=0}^l \binom li t^i e^{\lambda_1 t} w^{(l-i)}(\lambda_i) =
+    e^{\lambda_1 t} \cdot p_l(t),
+  \end{equation*}
+%
+  gdzie $p_l$ jest wielomianem stopnia co najwyżej $l$. Wtedy $p_{\overline{l}}$ ma postać
+%
+  \begin{equation*}
+    t^{\overline{l}} e^{\lambda_1 t} w(\lambda_1) + \widetilde{p}_{\overline{l}}(t) e^{\lambda_1 t},
+  \end{equation*}
+%
+  gdzie stopień $\widetilde{p}_{\overline{l}}$ jest mniejszy od $\overline{l}$. Z twierdzenia spektralnego jest
+%
+  \begin{align*}
+    \liminf_{t\to\infty} \frac{\norm[\big]{w(A) e^{At}}}{t^{\overline{l}} e^{\lambda_1 t}} &=
+    \liminf_{t\to\infty} \frac{\norm[\bigg]{\sum\limits_{l=0}^{\overline{l}-1} M_{1,l} e^{\lambda_1 t} 
+    p_l(t) + 
+    M_{1,\overline{l}} e^{\lambda_1 t} \p[\big]{t^{\overline{l}} w(\lambda_1) + \widetilde{p}_{\overline{l}} (t)} }} 
+    {t^{\overline{l}} e^{\lambda_1 t}} \\
+    &= \liminf_{t\to\infty} \frac{\norm[\big]{e^{\lambda_1 t}} \cdot 
+    \norm[\bigg]{\sum\limits_{l=0}^{\overline{l}-1} 
+    M_{1,l} 
+    p_l(t) + M_{1,\overline{l}} \p[\big]{t^{\overline{l}} w(\lambda_1) + \widetilde{p}_{\overline{l}} (t)} }} 
+    {t^{\overline{l}} e^{\lambda_1 t}} \\
+    &\geq \liminf_{t\to\infty} \frac{ \norm{M_{1,\overline{l}}} \cdot \abs[\big]{ t^{\overline{l}} w(\lambda_1) + 
+    \widetilde{p}_{\overline{l}}(t) } - \sum\limits_{l=0}^{\overline{l}-1} \norm{M_{1,\overline{l}}} \cdot 
+    \norm{p_l(t)} }{t^{\overline{l}}} \\
+    &\geq \liminf_{t\to\infty} \norm{M_{1,\overline{l}}} \cdot \abs*{w(\lambda_1) + 
+    \frac{\widetilde{p}_{\overline{l}}(t)}{t^{\overline{l}}}} - \limsup_{t\to\infty} \sum_{l=0}^{\overline{l}-1} 
+    \norm{M_{1,l}} \cdot \abs*{\frac{p_l(t)}{t^{\overline{l}}}} \\ 
+    &= \norm{M_{1,\overline{l}}} \cdot 
+    \underbrace{\abs[\big]{w(\lambda_1)}}_{>0}.
+  \end{align*}
+%
+  Ostatecznie
+%
+  \begin{equation*}
+    \liminf_{t\to\infty} \frac{\norm[\big]{w(A) e^{At}}}{t^{\overline{l}} e^{\lambda_1 t}} \geq 
+    \frac{1}{\norm[\big]{w(A)}} \cdot \liminf_{t\to\infty} \frac{\norm[\big]{w(A) e^{At}}}{t^{\overline{l}} 
+    e^{\overline{\lambda} t}} \geq \frac{\norm{M_{1,\overline{l}}} \cdot \abs[\big]{w(\lambda_1)}}{\norm[\big]{w(A)}}
+    >0. \qedhere
+  \end{equation*}
 \end{proof}
 
 

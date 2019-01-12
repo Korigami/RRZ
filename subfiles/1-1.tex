@@ -18,14 +18,13 @@
   Załóżmy dalej, że
 %
   \begin{enumerate}[label=\alph*)]
-    \item istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ zachodzi:
+    \item istnieje $L \geq 0$, że dla wszystkich $(y_1,t),(y_2,t) \in R_b$ zachodzi
 %
     \begin{equation*}
       \norm[\big]{ f(y_1,t,\lambda_0) - f(y_2,t,\lambda_0) } \leq L \cdot \norm{y_1-y_2},
     \end{equation*}
 %
-    \item \label{zalozenieb} dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ oraz każdej 
-    $\lambda$ jest:
+    \item dla dowolnego $\varepsilon>0$ istnieje $\delta>0$, że dla $(y,t) \in R_b$ oraz każdej $\lambda$ jest
 %
     \begin{equation*}
       \norm{\lambda - \lambda_0} < \delta \implies \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon.
@@ -88,16 +87,16 @@
   Wybierzmy $\varepsilon > 0$ taki, że $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$
   oraz oznaczmy $c^{\ast} = \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że
   $\norm{\lambda - \lambda_0} < \delta_{\varepsilon}$.
-  Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym zachodzi:
+  Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym dla każdego $t \in J$ zachodzi:
 %
   \begin{equation*}
-    \forall t \in J \quad \p[\big]{ y(t,\lambda), t } \in R_b.
+    \p[\big]{ y(t,\lambda), t } \in R_b.
   \end{equation*}
 %
-  Wtedy z lematu \ref{L: Kluczowy} dostajemy:
+  Wtedy z lematu \ref{L: Kluczowy}, dla wszystkich $t \in J$ jest:
 %
   \begin{equation*}
-    \forall t \in J \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \frac b2.
+    \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \frac b2.
   \end{equation*}
 %
   Przypuśćmy, że jeden z końców $J$, nazwijmy go $\alpha$, należy do wnętrza $I$. Wówczas z twierdzenia \ref{T: TOPK}, 
@@ -106,17 +105,17 @@
   pewnym otoczeniu $\alpha$. Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc pierwszą 
   część tezy.
   
-  Jeśli $\lambda_n \to \lambda_0$, to z założenia \ref{zalozenieb} istnieje ciąg $\varepsilon_n \to 0$ taki, że
+  Jeśli $\lambda_n \to \lambda_0$, to z założenia b) istnieje ciąg $\varepsilon_n \to 0$ taki, że
 %
   \begin{equation*}
-    \forall (y,t) \in R_b \ \forall n \quad \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n.
+    \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n.
   \end{equation*}
 %
-  Z lematu \ref{L: Kluczowy} dostajemy:
+  dla każdego $n$ oraz wszystkich $(y,t) \in R_b$. Z lematu \ref{L: Kluczowy}, dla $t \in I$ jest
 %
   \begin{equation*}
-    \forall t \in I \quad \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq
-    \varepsilon_n \cdot \abs{I} \cdot e^{L \abs{I}} \xrightarrow{n\to\infty} 0,
+    \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \varepsilon_n \cdot \abs{I} \cdot e^{L \abs{I}}
+    \xrightarrow{n\to\infty} 0,
   \end{equation*}
 %
   co dowodzi drugiej części tezy.
