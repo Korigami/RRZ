@@ -22,41 +22,42 @@ Rozwiązań będziemy szukali jedynie poza $t_0$, $t > t_0$.
 \paragraph{Metoda Frobeniusa.} Niech $t_0 = 0$. Szukamy rozwiązań w postaci
 %
 \begin{equation*}
-  y(t) = t^{\lambda} \sum_{n=0}^{\infty} c_n t^n, \quad c_0 \not= 0.
+  y(t) = t^{\lambda} \sum_{n=0}^{\infty} c_n t^n,
 \end{equation*}
 %
-Różniczkując stronami, dostajemy
+gdzie $c_0 \not= 0$. Różniczkując stronami, dostajemy
 %
-\begin{flalign*}
-  t y'(t) &= t^{\lambda} \sum_{n=0}^{\infty} c_n (n+\lambda) t^n, & \\
-  t^2 y''(t) &= t^{\lambda} \sum_{n=0}^{\infty} c_n (n+\lambda) (n+\lambda-1) t^n.
-\end{flalign*}
+\begin{equation*}
+  t y'(t) = t^{\lambda} \sum_{n=0}^{\infty} c_n (n+\lambda) t^n, \qquad
+  t^2 y''(t) = t^{\lambda} \sum_{n=0}^{\infty} c_n (n+\lambda) (n+\lambda-1) t^n.
+\end{equation*}
 %
 Niech $p(t) = \sum_{n=0}^{\infty} p_n t^n$ oraz $q(t) = \sum_{n=0}^{\infty} q_n t^n$. Wtedy
 %
-\begin{flalign*}
-  t p(t) y'(t) &= t^{\lambda} \p*{\sum_{n=0}^{\infty} p_n t^n} \cdot \p*{\sum_{n=0}^{\infty} c_n (n+\lambda) t^n}
-  = t^{\lambda} \sum_{n=0}^{\infty} t^n \sum_{k=0}^n c_k (k+\lambda) p_{n-k} & \\
-  &= t^{\lambda} \sum_{n=0}^{\infty} t^n \p*{c_n (n+\lambda) p_0 + \sum_{k=0}^{n-1} c_k (k+\lambda) p_{n-k}}, & \\
-  q(t) y(t) &= t^{\lambda} \p*{\sum_{n=0}^{\infty} q_n t^n} \cdot \p*{\sum_{n=0}^{\infty} c_n t^n}
-  = t^{\lambda} \sum_{n=0}^{\infty} t^n \sum_{k=0}^n c_k q_{n-k} & \\
-  &= t^{\lambda} \sum_{n=0}^{\infty} t^n \p*{c_n q_0 + \sum_{k=0}^{n-1} c_k q_{n-k}}. &
-\end{flalign*}
+\begin{align*}
+  t p(t) y'(t) &= t^{\lambda} \p[\bigg]{\sum_{n=0}^{\infty} p_n t^n} \cdot \p[\bigg]{\sum_{n=0}^{\infty} c_n 
+  (n+\lambda) t^n}
+  = t^{\lambda} \sum_{n=0}^{\infty} t^n \sum_{k=0}^n c_k (k+\lambda) p_{n-k} = \\
+  &= t^{\lambda} \sum_{n=0}^{\infty} t^n \p[\bigg]{c_n (n+\lambda) p_0 + \sum_{k=0}^{n-1} c_k (k+\lambda) p_{n-k}}, \\
+  q(t) y(t) &= t^{\lambda} \p[\bigg]{\sum_{n=0}^{\infty} q_n t^n} \cdot \p[\bigg]{\sum_{n=0}^{\infty} c_n t^n}
+  = t^{\lambda} \sum_{n=0}^{\infty} t^n \sum_{k=0}^n c_k q_{n-k} = \\
+  &= t^{\lambda} \sum_{n=0}^{\infty} t^n \p[\bigg]{c_n q_0 + \sum_{k=0}^{n-1} c_k q_{n-k}}.
+\end{align*}
 %
 Wstawiamy wynik do równania \eqref{regrr2}, otrzymując
 %
 \begin{multline*}
   t^{\lambda} \sum_{n=0}^{\infty} t^n \p[\big]{(n+\lambda) (n+\lambda-1) c_n + (n+\lambda) p_0 c_n + q_0 c_n } + \\
-  + t^{\lambda} \sum_{n=0}^{\infty} t^n \underbrace{\p*{\sum_{k=0}^{n-1} (k+\lambda) c_k p_{n-k} + 
-    \sum_{k=0}^{n-1} c_k q_{n-k}}}_{-X_n(c_0,\ldots,c_{n-1},\lambda)} = 0.
+  + t^{\lambda} \sum_{n=0}^{\infty} t^n \underbrace{\p[\bigg]{\sum_{k=0}^{n-1} (k+\lambda) c_k p_{n-k} + 
+    \sum_{k=0}^{n-1} c_k q_{n-k}}}_{-X_n(c_0,\ldots,c_{n-1})} = 0.
 \end{multline*}
 %
 Dla każdej naturalnej liczby $n > 0$ zachodzi:
 \begin{equation*}
-  c_n \p[\big]{(n+\lambda) (n+\lambda-1) + (n+\lambda) p_0 + q_0} = X_n(c_0,\ldots,c_{n-1},\lambda)
+  c_n \p[\big]{(n+\lambda) (n+\lambda-1) + (n+\lambda) p_0 + q_0} = X_n(c_0,\ldots,c_{n-1})
 \end{equation*}
 %
-oraz $X_0 = 0$ dla $n = 0$. Zdefiniujmy wielomian indeksowy $P$ wzorem
+oraz $X_0 = 0$ dla $n = 0$. Zdefiniujmy \emph{wielomian indeksowy} $P$ wzorem
 %
 \begin{equation*}
   P(s) = s(s-1) + p_0 s + q_0.
@@ -65,32 +66,35 @@ oraz $X_0 = 0$ dla $n = 0$. Zdefiniujmy wielomian indeksowy $P$ wzorem
 Wtedy otrzymujemy
 %
 \begin{equation*}
-  c_n P(n+\lambda) = X_n(c_0,\ldots,c_{n-1},\lambda) \implies c_0 P(\lambda) = 0.
+  c_n P(n+\lambda) = X_n(c_0,\ldots,c_{n-1}).
 \end{equation*}
 %
-Założyliśmy, że $c_0 \not= 0$, więc \emph{$\lambda$ musi być pierwiastkiem wielomianu indeksowego}. Dla $n = 0$ mamy 
-$X_0 = 0$, więc dla $n > 0$ rekurencja przyjmuje postać
+Stąd wynika, że $c_0 P(\lambda) = 0$. Założyliśmy, że $c_0 \not= 0$, więc \emph{$\lambda$ musi być pierwiastkiem 
+wielomianu indeksowego}. Dla $n = 0$ mamy $X_0 = 0$, więc dla $n > 0$ rekurencja przyjmuje postać
 %
 \begin{equation*}
-  c_n = \frac{X_n(c_0,\ldots,c_{n-1},\lambda)}{P(n+\lambda)}.
+  c_n = \frac{X_n(c_0,\ldots,c_{n-1})}{P(n+\lambda)}.
 \end{equation*}
 %
 To pozwala wyliczyć współczynniki $c_n$ dla $n > 0$, chyba że $P(n+\lambda) = 0$ dla pewnego $n$, czyli $n+\lambda$ 
 jest pierwiastkiem wielomianu indeksowego.
 %
-\paragraph{Przypadek podstawowy.} Wielomian indeksowy ma dwa pierwiastki rzeczywiste nieróżniące się o liczbę 
+\paragraph{Przypadek podstawowy.} Wielomian indeksowy ma dwa pierwiastki rzeczywiste $\lambda_1,\lambda_2$ nieróżniące 
+się o liczbę 
 całkowitą. Wówczas otrzymujemy dwa liniowo niezależne rozwiązanie przyjmując $\lambda = \lambda_1, \lambda_2$.
 %
 \paragraph{Przypadek zespolony.} Bierzemy jeden z nich, dostając rozwiązanie zespolone
 %
 \begin{equation*}
-  \widetilde{y}(t) = t^{\lambda} \sum_{n=0}^{\infty} c_n t^n = e^{at} (\cos bt + i \sin bt) \sum_{n=0}^{\infty} c_n t^n.
+  y(t) = t^{\lambda} \sum_{n=0}^{\infty} c_n t^n = e^{t \real \lambda} \p[\big]{\cos (t \imag \lambda) + i \sin 
+  (t \imag \lambda)} \sum_{n=0}^{\infty} c_n t^n.
 \end{equation*}
 %
-Rozwiązaniami są $\real \widetilde{y}(t)$, $\imag \widetilde{y}(t)$, i są liniowo niezależne.
+Rozwiązaniami są $\real y(t)$ oraz $\imag y(t)$, i są liniowo niezależne.
 %
-\paragraph{Przypadek pierwiastków postaci $\lambda$, $\lambda+r$, gdzie $\lambda \in \R$, $r \in \N$.} W tym przypadku 
-otrzymujemy jedno rozwiązanie postaci
+\paragraph{Przypadek pierwiastków różniących się o liczbą całkowitą.} Niech $\lambda$ oraz $\lambda +r$ będą 
+pierwiastkami, gdzie $r \in \Z$. Jeśli $r=0$, to mamy pierwiastek podwójny. W przeciwnym przypadku otrzymujemy jedno 
+rozwiązanie postaci
 %
 \begin{equation} \label{yzero}
   y_0(t) = t^{\lambda+r} \sum_{n=0}^{\infty} c_n t^n.
@@ -102,42 +106,42 @@ Drugiego rozwiązania szukamy w postaci
   y(t) = t^{\lambda} \sum_{n=0}^{\infty} d_n t^n + \gamma y_0(t) \ln t,
 \end{equation*}
 %
-gdzie $\gamma$ to stała, którą wyznaczymy. Wstawiając do równania, otrzymujemy:
+gdzie $\gamma$ to stała, którą wyznaczymy. Wstawiając do równania, otrzymujemy
 %
-\begin{equation*}
-  t^{\lambda} \sum_{n=0}^{\infty} t^n \p[\big]{P(n+\lambda) \cdot d_n - X_n(d_0,\ldots,d_{n-1},\lambda)} + \Gamma(t) =0,
-\end{equation*}
+\begin{multline*}
+  t^{\lambda} \sum_{n=0}^{\infty} t^n \p[\big]{P(n+\lambda) \cdot d_n - X_n(d_0,\ldots,d_{n-1})} + \\ +
+  \gamma t^2\p[\big]{y_0(t) \ln t}'' + \gamma t p(t) \p[\big]{y_0(t) \ln t}' + \gamma q(t) y_0(t) \ln t = 0.
+\end{multline*}
 %
-gdzie
+Zajmijmy się składnikami zawierającymi $\gamma$. Po zróżniczkowaniu, dostajemy
 %
 \begin{align*}
-  \Gamma(t) &= \gamma \p[\big]{t^2\p[\big]{y_0(t) \ln t}'' + t p(t) \p[\big]{y_0(t) \ln t}'' +q(t) y_0(t) \ln t} \\
-  &= \gamma \ln t \p[\big]{t^2 y_0''(t) + t p(t) y_0'(t) + q(t) y_0(t)}
-    + \gamma \p[\big]{2t y_0'(t) + \p[\big]{p(t) - 1} y_0(t)}
+  &\gamma \ln t \p[\big]{t^2 y_0''(t) + t p(t) y_0'(t) + q(t) y_0(t)}
+    + \gamma \p[\big]{2t y_0'(t) + \p[\big]{p(t) - 1} y_0(t)} = \ldots
 \intertext{Pierwszy człon się zeruje, bo $y_0$ jest rozwiązaniem. Wstawiając \eqref{yzero}, mamy}
-  &= \gamma \p*{2t \cdot \sum_{n=0}^{\infty} (\lambda+n+r) c_n t^{n+\lambda+r-1} + 
-    \p[\big]{p(t)-1} \cdot \sum_{n=0}^{\infty} c_n t^{\lambda+n+r}} \\
-  &= \gamma t^{\lambda+r} \p*{\sum_{n=0}^{\infty} 2(\lambda+r+n) c_n t^n + p(t) \sum_{n=0}^{\infty} c_n t^n - 
+  \ldots &= \gamma \p[\bigg]{2t \cdot \sum_{n=0}^{\infty} (n+\lambda+r) c_n t^{n+\lambda+r-1} + 
+    \p[\big]{p(t)-1} \cdot \sum_{n=0}^{\infty} c_n t^{n+\lambda+r}} \\
+  &= \gamma t^{\lambda+r} \p[\bigg]{\sum_{n=0}^{\infty} 2(n+\lambda+r) c_n t^n + p(t) \sum_{n=0}^{\infty} c_n t^n - 
   \sum_{n=0}^{\infty} c_n t^n} \\
-  &= \gamma t^{\lambda+r} \p*{\sum_{n=0}^{\infty} 2(\lambda+r+n) c_n t^n + 
+  &= \gamma t^{\lambda+r} \p[\bigg]{\sum_{n=0}^{\infty} 2(n+\lambda+r) c_n t^n + 
     \sum_{n=0}^{\infty} t^n \sum_{k=0}^n c_k p_{n-k} - \sum_{n=0}^{\infty} c_n t^n} \\
-  &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p*{2(\lambda+r+n) c_n + \sum_{k=0}^n c_k p_{n-k} - c_n} \\
-  &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p*{2(\lambda+r+n) c_n + 
-    (p_0-1) c_n + \sum_{k=0}^{n-1} c_k p_{n-k}} \\
-\intertext{Zauważmy, że $P'(\lambda+n+r) = 2s + p_0 - 1$. Stąd}  
-  &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\big]{P'(\lambda+r+n) c_n + Y_n(c_0,\ldots,c_{n-1})}
+  &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\bigg]{2(n+\lambda+r) c_n + \sum_{k=0}^n c_k p_{n-k} - c_n} \\
+  &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\bigg]{2(n+\lambda+r) c_n + 
+    (p_0-1) c_n + \sum_{k=0}^{n-1} c_k p_{n-k}} = \ldots \\
+\intertext{Zauważmy, że $P'(n+\lambda+r) = 2(n+\lambda+r) + p_0 - 1$. Stąd}  
+  &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\big]{P'(n+\lambda+r) c_n + Y_n(c_0,\ldots,c_{n-1})}
 \intertext{gdzie $Y_n(c_0,\ldots,c_{n-1}) = \sum_{k=0}^{n-1} c_k p_{n-k}$. Przesuwając indeksy, dostajemy}
-  &= \gamma t^{\lambda} \sum_{n=r}^{\infty} t^n \p[\big]{Y_{n-r}(c_0,\ldots,c_{n-r-1}) + c_{n-r} P'(\lambda+n)}.
+  &= \gamma t^{\lambda} \sum_{n=r}^{\infty} t^n \p[\big]{c_{n-r} P'(n+\lambda) + Y_{n-r}(c_0,\ldots,c_{n-r-1})}.
 \end{align*}
 %
 Otrzymaliśmy zatem
 %
 \begin{multline*}
-  \sum_{n=0}^{\infty} t^{\lambda+n} P(n+\lambda) d_n - X_n(d_0,\ldots,d_{n-1}) + \\ +
-  \gamma \sum_{n=r}^{\infty} t^{\lambda+n} P'(n+\lambda) c_{n-r} + Y_{n-r}(c_0,\ldots,c_{n-r}) = 0.
+  \sum_{n=0}^{\infty} t^{n+\lambda} \p[\big]{ P(n+\lambda) d_n - X_n(d_0,\ldots,d_{n-1}) } \ + \\ +
+  \gamma \sum_{n=r}^{\infty} t^{n+\lambda} \p[\big]{ P'(n+\lambda) c_{n-r} + Y_{n-r}(c_0,\ldots,c_{n-r}) } = 0.
 \end{multline*}
 %
-Przyrównujmy do zera współczynniki przy $t^{\lambda+n}$. Jeśli $0 \leq n < r$, to
+Przyrównujemy do zera współczynniki przy $t^{n+\lambda}$. Jeśli $0 \leq n < r$, to
 %
 \begin{equation*}
   P(n+\lambda) d_n = X_n(d_0,\ldots,d_{n-1}).
@@ -146,14 +150,31 @@ Przyrównujmy do zera współczynniki przy $t^{\lambda+n}$. Jeśli $0 \leq n < r
 Z kolei jeśli $n \geq r$, to mamy
 %
 \begin{equation*}
-  P(n+\lambda) d_n + \gamma P'(\lambda+n) c_{n-r} = X_n(d_0,\ldots,d_{n-1}) + Y_{n-r}(c_0,\ldots,c_{n-r}).
+  P(n+\lambda) d_n + \gamma P'(n+\lambda) c_{n-r} = X_n(d_0,\ldots,d_{n-1}) + \gamma Y_{n-r}(c_0,\ldots,c_{n-r}).
+\end{equation*}
+
+\textsc{Przypadek 1.} Niech $r>0$. Wybieramy dowolne $d_0$, byle tylko różne od zera. Dla $n=1,\ldots,r-1$ otrzymujemy 
+$d_n$ z rekurencji. Jeśli $n=r$, to
+%
+\begin{equation*}
+  \gamma P'(\lambda+r) c_0 = X_r(d_0,\ldots,d_{r-1}).
 \end{equation*}
 %
-%\textsc{Przypadek 1.} Dla $r>0$ dostajemy
+Kładziemy
 %
-%\begin{equation*}
-%  
-%\end{equation*}
+\begin{equation*}
+  \gamma = \frac{X_r(d_0,\ldots,d_{r-1})}{c_0 P'(\lambda+r)}.
+\end{equation*}
+%
+Powyższe wyrażenie ma sens, bo $\lambda+r$ nie jest pierwiastkiem podwójnym, więc $P'(\lambda+r) \not= 0$. Ponadto nie 
+otrzymaliśmy warunku na $d_r$, więc $d_r$ może być dowolne (nawet $0$). W końcu, jeśli $n>r$, to
+%
+\begin{equation*}
+  d_n = \frac{X_n - Y_{n-r} - \gamma P'(n+\lambda) c_{n-r}}{P(\lambda+r)}.
+\end{equation*}
+
+\textsc{Przypadek 2.} Niech $r=0$. Wtedy $P(\lambda) = P'(\lambda) = 0$. Kładziemy dowolne $d_0 \not= 0$ oraz $\gamma 
+\not= 0$. Dla $n > 0$ kolejne współczynniki wyznaczamy tak samo, jak w przypadku poprzednim ($n>r$).
 
 
 
