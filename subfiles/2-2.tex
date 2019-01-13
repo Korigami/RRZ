@@ -129,16 +129,16 @@ Zajmijmy się składnikami zawierającymi $\gamma$. Po zróżniczkowaniu, dostaj
   &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\bigg]{2(n+\lambda+r) c_n + 
     (p_0-1) c_n + \sum_{k=0}^{n-1} c_k p_{n-k}} = \ldots \\
 \intertext{Zauważmy, że $P'(n+\lambda+r) = 2(n+\lambda+r) + p_0 - 1$. Stąd}  
-  \ldots &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\big]{P'(n+\lambda+r) c_n + Y_n(c_0,\ldots,c_{n-1})} =\ldots
-\intertext{gdzie $Y_n(c_0,\ldots,c_{n-1}) = \sum_{k=0}^{n-1} c_k p_{n-k}$. Przesuwając indeksy, dostajemy}
-  \ldots &= \gamma t^{\lambda} \sum_{n=r}^{\infty} t^n \p[\big]{c_{n-r} P'(n+\lambda) + Y_{n-r}(c_0,\ldots,c_{n-r-1})}.
+  \ldots &= \gamma t^{\lambda+r} \sum_{n=0}^{\infty} t^n \p[\big]{P'(n+\lambda+r) c_n - Y_n(c_0,\ldots,c_{n-1})} =\ldots
+\intertext{gdzie $-Y_n(c_0,\ldots,c_{n-1}) = \sum_{k=0}^{n-1} c_k p_{n-k}$. Przesuwając indeksy, dostajemy}
+  \ldots &= \gamma t^{\lambda} \sum_{n=r}^{\infty} t^n \p[\big]{c_{n-r} P'(n+\lambda) - Y_{n-r}(c_0,\ldots,c_{n-r-1})}.
 \end{align*}
 %
 Otrzymaliśmy zatem
 %
 \begin{multline*}
   \sum_{n=0}^{\infty} t^{n+\lambda} \p[\big]{ P(n+\lambda) d_n - X_n(d_0,\ldots,d_{n-1}) } \ + \\ +
-  \gamma \sum_{n=r}^{\infty} t^{n+\lambda} \p[\big]{ P'(n+\lambda) c_{n-r} + Y_{n-r}(c_0,\ldots,c_{n-r}) } = 0.
+  \gamma \sum_{n=r}^{\infty} t^{n+\lambda} \p[\big]{ P'(n+\lambda) c_{n-r} - Y_{n-r}(c_0,\ldots,c_{n-r-1}) } = 0.
 \end{multline*}
 %
 Przyrównujemy do zera współczynniki przy $t^{n+\lambda}$. Jeśli $0 \leq n < r$, to
@@ -150,7 +150,7 @@ Przyrównujemy do zera współczynniki przy $t^{n+\lambda}$. Jeśli $0 \leq n < 
 Z kolei jeśli $n \geq r$, to mamy
 %
 \begin{equation*}
-  P(n+\lambda) d_n + \gamma P'(n+\lambda) c_{n-r} = X_n(d_0,\ldots,d_{n-1}) + \gamma Y_{n-r}(c_0,\ldots,c_{n-r}).
+  P(n+\lambda) d_n + \gamma P'(n+\lambda) c_{n-r} = X_n(d_0,\ldots,d_{n-1}) + \gamma Y_{n-r}(c_0,\ldots,c_{n-r-1}).
 \end{equation*}
 
 \textsc{Przypadek 1.} Niech $r>0$. Wybieramy dowolne $d_0$, byle tylko różne od zera. Dla $n=1,\ldots,r-1$ otrzymujemy 
@@ -170,7 +170,7 @@ Powyższe wyrażenie ma sens, bo $\lambda+r$ nie jest pierwiastkiem podwójnym, 
 otrzymaliśmy warunku na $d_r$, więc $d_r$ może być dowolne (nawet $0$). W końcu, jeśli $n>r$, to
 %
 \begin{equation*}
-  d_n = \frac{X_n - Y_{n-r} - \gamma P'(n+\lambda) c_{n-r}}{P(\lambda+r)}.
+  d_n = \frac{X_n(d_0,\ldots,d_{n-1}) + Y_{n-r}(c_0,\ldots,c_{n-r-1}) - \gamma P'(n+\lambda) c_{n-r}}{P(\lambda+r)}.
 \end{equation*}
 
 \textsc{Przypadek 2.} Niech $r=0$. Wtedy $P(\lambda) = P'(\lambda) = 0$. Kładziemy dowolne $d_0 \not= 0$ oraz $\gamma 
