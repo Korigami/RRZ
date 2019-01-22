@@ -67,6 +67,11 @@
 \newcommand*{\C}{\mathbb{C}}
 \newcommand*{\mychi}{\protect\raisebox{2pt}{$\chi$}}
 
+\let\ly\l
+\def\l{\ifmmode \lambda \else \ly \fi}
+\newcommand{\eps}{\varepsilon}
+\newcommand{ \pd }[1]{ \partial_{#1} \,  }
+
 \pagestyle{uheadings}
 \makeatletter
 \renewcommand\heading@font\scshape
