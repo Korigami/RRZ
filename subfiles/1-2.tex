@@ -1,45 +1,129 @@
+
 %!TEX root = ../RRZ.tex
-%
-\begin{theorem}[O różniczkowalnej zależności od parametru]
-  Niech
-%
-  \begin{equation*}
-    y' = f(y,t,\lambda), \qquad
-    f \colon \R^{m+1} \times \R \supset U \times (\lambda_0 - c, \lambda_0 + c) \longrightarrow \R^m,
-  \end{equation*}
-%
-  gdzie $f$ jest funkcją ciągłą względem $y,t,\lambda$ oraz klasy $C^1$ względem $y,\lambda$. Ustalmy warunek 
-  początkowy $(y_0,t_0)$ i oznaczmy przez $y(t,\lambda)$ rozwiązanie równania
-%
-  \begin{equation*}
-    \frac{\partial y(t,\lambda)}{\partial t} = f(y,t,\lambda)
-  \end{equation*}
-%
-  z warunkiem początkowym $y(t_0,\lambda) = y_0$, określone na ustalonym i \emph{zwartym} przedziale $I$. Wówczas na 
-  przedziale $I$ istnieje ciągła funkcja
-%
-  \begin{equation*}
-    z(t,\lambda_0) = \frac{\partial y(t,\lambda)}{\partial \lambda} \Big\vert_{\lambda = \lambda_0}
-  \end{equation*}
-%
-  oraz zachodzi równość
-%
-  \begin{equation*}
-    \frac{\partial z(t,\lambda_0)}{\partial t} =
-    \frac{\partial^2 y(t,\lambda)}{\partial t \partial \lambda} \Big\vert_{\lambda = \lambda_0} =
-    \frac{\partial^2 y(t,\lambda)}{\partial \lambda \partial t} \Big\vert_{\lambda = \lambda_0}.
-  \end{equation*}
-\end{theorem}
 
-\begin{proof}
-  Łatwy dowód Czytelnik sporządzi samodzielnie jako ćwiczenie.
-\end{proof}
-
-
-
-
-
-
+	%
+	\begin{theorem}[O różniczkowalnej zależności od parametru]
+		Niech
+		%
+		\begin{equation*}
+		y' = f(y,t,\lambda), \qquad
+		f \colon \R^{m+1} \times \R \supset U \times (\lambda_0 - c, \lambda_0 + c) \longrightarrow \R^m,
+		\end{equation*}
+		%
+		gdzie $f$ jest funkcją ciągłą względem $y,t,\lambda$ oraz klasy $C^1$ względem $y,\lambda$. Ustalmy warunek 
+		początkowy $(y_0,t_0)$ i oznaczmy przez $y(t,\lambda)$ rozwiązanie równania
+		%
+		\begin{equation*}
+		\frac{\partial y(t,\lambda)}{\partial t} = f(y,t,\lambda)
+		\end{equation*}
+		%
+		z warunkiem początkowym $y(t_0,\lambda) = y_0$, określone na ustalonym i \emph{zwartym} przedziale $I$. Wówczas na 
+		przedziale $I$ istnieje ciągła funkcja
+		%
+		\begin{equation*}
+		z(t,\lambda_0) = \frac{\partial y(t,\lambda)}{\partial \lambda} \Big\vert_{\lambda = \lambda_0}
+		\end{equation*}
+		%
+		oraz zachodzi równość
+		%
+		\begin{equation*}
+		\frac{\partial z(t,\lambda_0)}{\partial t} =
+		\frac{\partial^2 y(t,\lambda)}{\partial t \partial \lambda} \Big\vert_{\lambda = \lambda_0} =
+		\frac{\partial^2 y(t,\lambda)}{\partial \lambda \partial t} \Big\vert_{\lambda = \lambda_0}.
+		\end{equation*}
+	\end{theorem}
+	
+	\begin{proof}
+		%
+		Niech $y_\l(t) \in R_b$. Niech $w_\l(t) \coloneqq \frac{ y_\l(t) - y_{\l_0}(t) }{ \l - \l_0 }$ dla $\l \ne \l_0$.
+		Wtedy:
+		%
+		\begin{align*}
+		%
+		\pd{t} w_\l(t) &= \frac{ \pd{t} y_\l(t) - \pd{t} y_{\l_0}(t) }{ \l - \l_0 } = \frac{ f_\l(y_\l(t), t) - 
+			f_{\l_0}(y_{\l_0}(t), t) }{ \l - \l_0 } = \\
+		&=  \frac{ f_\l(y_{\l_0}(t) + (\l - \l_0)w_\l(t), t) - 
+			f_{\l_0}(y_{\l_0}(t), t) }{ \l - \l_0 } \text{.}
+		%
+		\end{align*}
+		%
+		Rozważmy dalej funkcję 
+		%
+		\begin{equation*}
+		%
+		F_\l(w, t) \coloneqq \frac{ f_\l(y_{\l_0}(t) + (\l - \l_0)w, t) -  f_{\l_0}(y_{\l_0}(t), t) }{ \l - \l_0 } \text{.}
+		%
+		\end{equation*}
+		%
+		(Zwróćmy uwagę na to, że w definicji $F$ $w$ jest symbolem argumentu, a nie funkcji.) 
+		
+		Pokażemy, że istnieje taka $c* > 0$, że o ile $ \abs{ \l - \l_0} \le c*$, to dziedzina $F$ dla każdego $\l$ spełniającego ten warunek jest zbiorem zwartym, a także, że $w_\l(t)$ zawiera się w tej dziedzinie dla każdego $t \in I$. 
+		
+		Z lematu udowodnionego w Twierdzeniu o ciągłej zależności od parametru wiemy, że istnieją takie stałe $c_1, K_1 > 0$ takie, że o ile $\abs{ \l - \l_0 } < c_1$, to $\norm{ w_\l(t) } \le K_1$. Z kolei, jeśli $\abs{ \l - \l_0 } \le \frac{ b }{ 2K_1 }$, 
+		to dla $w : \norm{ w } \le 2K_1$ zachodzi:
+		%
+		\begin{equation*}
+		%
+		\norm{ y_{\l_0}(t) + (\l - \l_0)w - y_{\l_0}(t) } = \norm { (\l - \l_0)w  } = \abs{ \l - \l_0 } \norm{ w } \le
+		\frac{ b }{ 2K_1 } 2K_1 = b \text{,}
+		%
+		\end{equation*}
+		%
+		co oznacza, że $( y_{\l_0}(t) + (\l - \l_0)w, t) \in R_b$ dla każdego $t \in I$. Oznaczmy $c^* = min(c_1, \frac{ b }{ 2K_1 } )$. Dzięki temu $F$ jest prawidłowo zdefiniowana na zbiorze
+		%
+		\begin{equation*}
+		%
+		\overline{B}(0, 2K_1) \times I \times ( (\l_0 - c^*, \l_0 + c^*) \setminus \{ \l_0 \} ) \text{.}
+		%
+		\end{equation*}
+		%
+		Dodefiniujemy $F$ dla $\l = \l_0$ tak, by była ona ciągła względem $\l$ w tym punkcie. Zachodzi:
+		%
+		\begin{align*}
+		%
+		\lim_{\l \to \l_0} F_\l(w, t) &= \lim_{\l \to \l_0} \frac{ f_\l(y_{\l_0}(t) + (\l - \l_0)w, t) -  f_{\l_0}(y_{\l_0}(t), t) }{ \l - \l_0 } = \\
+		&=  \lim_{\l \to \l_0} \frac{ f_\l(y_{\l_0}(t) + (\l - \l_0)w, t) -  f_\l (y_{\l_0}(t), t) }{ w(\l - \l_0) } \cdot w + \\
+		&+ \lim_{\l \to \l_0} \frac{ f_\l(y_{\l_0}(t), t) -  f_{\l_0}(y_{\l_0}(t) }{ \l - \l_0 } = \\
+		&= \pd{ y } f_{\l_0} (y, t) \, \Big\vert_{ y = y_{\l_0}(t) } \cdot w + \pd{ \l } f_{\l}( y_{\l_0}(t), t) \, \Big\vert_{ \l = \l_0 } \text{,}
+		\end{align*}
+		%
+		przy czym powyższe pochodne istnieją, gdyż z założenia $f$ jest $C^1$ względem $y$ i $\l$. Niech $F_{\l_0}(w, t) \coloneqq \lim_{\l \to \l_0} F_\l(w, t)$. Wtedy $F$ jest zdefiniowana na zbiorze $\overline{B}(0, 2K_1) \times I \times (\l_0 - c^*, \l_0 + c^*)$, który jest zwarty dla każdego ustalonego $\l$.
+		%
+		\begin{nestedlemma}
+			%
+			Funkcja $F$ zdefiniowana powyżej spełnia założenia Twierdzenia o ciągłej zależności od parametru przy równaniu 
+			różniczkowym $\pd{t} w = F_\l(w, t)$. (Jest on przyjmowany bez dowodu)
+			%
+		\end{nestedlemma}		
+		%
+		Z powyższego oraz na mocy Twierdzenia Picarda dla każdego $\l \in  (\l_0 - c*, \l_0 + c*)$ istnieje rozwiązanie
+		powyższego równania różniczkowego a także istnieje jednoznaczne rozwiązanie dla $\l = \l_0$ określone
+		w pewnym $J \subset I$ (BSO niech $J$ będzie maksymalny możliwy). Co więcej, z Twierdzenia
+		o ciągłej zależności mamy, ze dla każdego ciągu $\l_n \to \l_0$ zachodzi $w_{\l_n}(t) \rightrightarrows w_{\l_0}(t)$.
+		Stąd:
+		%
+		\begin{equation*}
+		%
+		w_{\l_0}(t) = \lim_{n \to \infty} w_{\l_n}(t) = \lim_{\l \to \l_0} w_{\l}(t) = \lim_{\l \to \l_0} \frac{ y_\l(t) - y_{\l_0}(t) }{ \l - \l_0 } = \pd{ \l } y_\l(t) \Big\vert_{ \l = \l_0 } \text{.}
+		%
+		\end{equation*}
+		%
+		Zatem $w_{\l_0}$ jest szukaną funkcją $z$ z tezy twierdzenia.
+		
+		Równość w twierdzeniu zachodzi, gdyz:
+		%
+		\begin{align*}
+		%
+		\pd{t} w_{\l_0}(t) &= \pd{t} \lim_{\l \to \l_0}  \frac{ y_\l(t) - y_{\l_0}(t) }{ \l - \l_0 } = \pd{t} \lim_{n \to \infty}
+		\frac{ y_{\l_n}(t) - y_{\l_0}(t) }{ \l_n - \l_0 } = \\
+		&= \lim_{n \to \infty} \frac{  \pd{t} y_{\l_n}(t) -  \pd{t} y_{\l_0}(t) }{ \l_n - \l_0 } = \lim_{\l \to \l_0} \frac{  \pd{t} y_{\l_n}(t) -  \pd{t} y_{\l_0}(t) }{ \l_n - \l_0 } = \\
+		& = \pd{\l } \pd{t} y_\l (t) \Big\vert_{ \l = \l_0 } \text{.}
+		%
+		\end{align*}
+		%
+		Czyli istotnie $\pd{t} w_{\l_0}(t) = \pd{\l } \pd{t} y_\l (t) \Big\vert_{ \l = \l_0 }$.
+		%
+	\end{proof}
 
 
 
