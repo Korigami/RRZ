@@ -11,7 +11,7 @@
 \begin{theorem}[Spektralne dla wielomianów]
   Niech $A$ będzie macierzą o wartościach własnych $\lambda_1,\ldots,\lambda_n$ z krotnościami $q_1,\ldots,q_n$. Wtedy 
   istnieją macierze $M_{k,l}$ dla $1 \leq k \leq n$, $0 \leq l \leq q_k-1$, zwane \emph{spektralnymi} takie, że dla 
-  każdego wielomianu $f$ zachodzi:
+  każdego wielomianu $f$ stopnia $m$ zachodzi:
 %
   \begin{equation*}
     f(A) = \sum_{k=1}^{n} \sum_{l=0}^{q_k-1} M_{k,l} \cdot f^{(l)}(\lambda_k).
@@ -23,7 +23,7 @@
 %
   \begin{nestedlemma} \label{L: 1.4.2}
     Macierze $M_{k,l}$ są jednoznacznie wyznaczone przez tezę twierdzenia spektralnego dla
-    wielomianów postaci $f(z) = z^r$, gdzie $r = 0, \ldots, m-1$, a~$m$ jest stopniem wielomianu $f$.
+    wielomianów postaci $f(z) = z^r$, gdzie $r = 0, \ldots, m-1$.
   \end{nestedlemma}
 %
   \begin{nestedproof}

@@ -54,7 +54,7 @@
       $ \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } \leq \varepsilon $.
     \end{enumerate}
 %
-    Wtedy dla każdego $t \in J$ prawdziwa jest nierówność:
+    Wtedy dla każdego $t \in J$ prawdziwa jest nierówność
 %
     \begin{equation*}
       \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \varepsilon \cdot e^{L \abs{t-t_0}} \cdot \abs{t-t_0}.
@@ -71,7 +71,7 @@
       &\leq \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, \lambda } - 
           f\p[\big]{ y(u,\lambda_0), u, \lambda_0 } } du } \\
       &\leq \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, \lambda } - 
-          f\p[\big]{ y(u,\lambda), u, \lambda_0 } } du } \\
+          f\p[\big]{ y(u,\lambda), u, \lambda_0 } } du } \, + \\
       &\qquad+ \abs*{ \int_{t_0}^t \norm[\Big]{ f \p[\big]{ y(u,\lambda), u, \lambda_0 } - 
           f\p[\big]{ y(u,\lambda_0), u, \lambda_0 } } du } \\
       &\leq \abs*{\int_{t_0}^t \varepsilon \, du} + 
@@ -86,29 +86,29 @@
 %
   Wybierzmy $\varepsilon > 0$ taki, że $\varepsilon \cdot \abs{I} \cdot e^{L \abs{I}} \leq \frac b2$
   oraz oznaczmy $c^{\ast} = \min(c,\delta_{\varepsilon})$. Weźmy $\lambda > 0$ taką, że
-  $\norm{\lambda - \lambda_0} < \delta_{\varepsilon}$.
+  $\norm{\lambda - \lambda_0} < c^*$.
   Niech $J$ będzie maksymalnym podprzedziałem $I$, na którym dla każdego $t \in J$ zachodzi:
 %
   \begin{equation*}
     \p[\big]{ y(t,\lambda), t } \in R_b.
   \end{equation*}
 %
-  Wtedy z lematu \ref{L: Kluczowy}, dla wszystkich $t \in J$ jest:
+  Wtedy z lematu \ref{L: Kluczowy}, dla wszystkich $t \in J$ jest
 %
   \begin{equation*}
     \norm[\big]{ y(t,\lambda) - y(t,\lambda_0) } \leq \frac b2.
   \end{equation*}
 %
-  Przypuśćmy, że jeden z końców $J$, nazwijmy go $\alpha$, należy do wnętrza $I$. Wówczas z twierdzenia \ref{T: TOPK}, 
-  $y(t,\lambda)$ przedłuża się na przedział $\widetilde{J}$ zawierający $\alpha$ we wnętrzu. Co więcej, ponieważ 
-  $\norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }$ jest funkcją ciągłą względem $t$, to pozostaje mniejsza od $b$ na 
-  pewnym otoczeniu $\alpha$. Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc pierwszą 
-  część tezy.
+  Przypuśćmy, że jeden z końców $J$, nazwijmy go $\alpha$, należy do wnętrza $I$. Wówczas z~twierdzenia o przedłużaniu 
+  przez koniec, $y(t,\lambda)$ przedłuża się na przedział zawierający $\alpha$ we wnętrzu. Co więcej, ponieważ 
+  $\norm[\big]{ y(t,\lambda) - y(t,\lambda_0) }$ jest funkcją ciągłą względem $t$, to pozostaje mniejsza od 
+  $b$ na pewnym otoczeniu $\alpha$. Zatem $J$ nie był przedziałem maksymalnym, chyba że $J = I$. Pokazaliśmy więc 
+  pierwszą część tezy.
   
   Jeśli $\lambda_n \to \lambda_0$, to z założenia b) istnieje ciąg $\varepsilon_n \to 0$ taki, że
 %
   \begin{equation*}
-    \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n.
+    \norm[\big]{ f(y,t,\lambda) - f(y,t,\lambda_0) } < \varepsilon_n
   \end{equation*}
 %
   dla każdego $n$ oraz wszystkich $(y,t) \in R_b$. Z lematu \ref{L: Kluczowy}, dla $t \in I$ jest
