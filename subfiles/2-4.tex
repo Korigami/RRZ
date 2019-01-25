@@ -1,1 +1,149 @@
 %!TEX root = ../RRZ.tex
+%
+Rozpatrzmy równanie
+%
+\begin{equation*}
+  y^{(n)} + a_{n-1} y^{(n-1)} + \ldots + a_1 y' + a_0 y = 0.
+\end{equation*}
+%
+Możemy je zapisać jako
+%
+\begin{equation*}
+  \begin{bmatrix}
+    y' \\
+    y'' \\
+    \vdots \\
+    y^{(n)}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0      & 1      & 0      & \cdots & 0        \\
+    0      & 0      & 1      & \cdots & 0        \\
+    \vdots & \vdots & \ddots & \ddots & \vdots   \\
+    0      & 0      &        & \ddots & 1        \\
+    -a_0   & -a_1   & \cdots & \cdots & -a_{n-1}
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    y \\
+    y' \\
+    \vdots \\
+    y^{(n-1)}
+  \end{bmatrix}.
+\end{equation*}
+%
+Wielomian odpowiadający temu równaniu ma postać
+%
+\begin{equation*}
+  \l^n + a_{n-1} \l^{n-1} + \ldots + a_1 \l + a_0 = 0.
+\end{equation*}
+%
+Rozwiązań równania różniczkowego będziemy szukali w zależności od pierwiastków wielomianu. Niech 
+$\l_1,\ldots,\l_n$ będą owymi pierwiastkami.
+%
+\begin{enumerate}
+  \item Jeśli $\l_i$ jest rzeczywistym pierwiastkiem jednokrotnym, to $e^{\l_i x}$ jest rozwiązaniem,
+  \item Jeśli $\l_i$ jest rzeczywistym pierwiastkiem $p$-krotnym, to $x^i e^{\l_i x}$, są rozwiązaniami dla $i = 0, 
+  \ldots, p-1$,
+  \item Jeśli $\l_i$ jest zespolonym pierwiastkiem jednokrotnym, to rozwiązaniami są $e^{\real(\l_i)x} \cos 
+  \p[\big]{\imag(\l_i) x}$ oraz $e^{\real(\l_i)x} \sin \p[\big]{\imag(\l_i) x}$,
+  \item Jeśli $\l_i$ jest zespolonym pierwiastkiem $p$-krotnym, to rozwiązaniami są $x_i e^{\real(\l_i)x} \cos 
+  \p[\big]{\imag(\l_i) x}$ oraz $x^i e^{\real(\l_i)x} \sin \p[\big]{\imag(\l_i) x}$ dla $i = 0, \ldots, p-1$.
+\end{enumerate}
+%
+Rozwiązaniami ogólnymi będą kombinacje liniowe powyższych.
+
+Rozważmy teraz odpowiadające równanie niejednorodne
+%
+\begin{equation*}
+  y^{(n)} + a_{n-1} y^{(n-1)} + \ldots + a_1 y' + a_0 y = f(x).
+\end{equation*}
+%
+Rozwiązanie będzie zależało od postaci części niejednorodnej.
+%
+\begin{enumerate}
+  \item Jeśli niejednorodność jest postaci $f(x) = Q_n(x) e^{\l x}$, gdzie $Q_n$ jest wielomianem stopnia $n$, to 
+  rozwiązanie szczególne ma postać
+  \begin{equation*}
+    y_s(x) = x^p P_n e^{\l x},
+  \end{equation*}
+  przy czym $P_n$ jest wielomianem stopnia co najwyżej $n$, a $p$ jest krotnością $\l$ jako pierwiastka wielomianu.
+  \item Jeśli niejednorodność ma postać
+  \begin{equation*}
+    f(x) = e^{\alpha x} \p[\big]{Q_n(x) \cos(\beta x) + P_m(x) \sin (\beta x)},
+  \end{equation*}
+  to rozwiązanie szczególne jest postaci
+  \begin{equation*}
+    y_s(x) = x^p e^{\alpha x} \p[\big]{P_N \cos(\beta x) + Q_N \sin(\beta x)},
+  \end{equation*}
+  gdzie $N = \max(\deg Q_n, \deg P_m)$, a $p$ jest krotnością $\lambda = \alpha + \beta i$ jako pierwiastka wielomianu.
+  \item W przeciwnym przypadku stosujemy metodę uzmienniania stałej. Wtedy
+  \begin{equation*}
+    \begin{bmatrix}
+      y_1         & y_2         & \cdots & y_n         \\
+      y_1'        & y_2'        & \cdots & y_n'        \\
+      \vdots      & \vdots      & \ddots & \vdots      \\
+      y_1^{(n-1)} & y_2^{(n-1)} & \cdots & y_n^{(n-1)}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      c_1'(x) \\
+      c_2'(x) \\
+      \vdots  \\
+      c_n'(x)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    0 \\
+    0 \\
+    \vdots \\
+    f(x)
+    \end{bmatrix}.
+  \end{equation*}
+  Wówczas
+  \begin{equation*}
+    y_s = c_1 y_1 + \ldots + c_n y_n.
+  \end{equation*}
+\end{enumerate}
+%
+\begin{theorem}[Zasada Duhamela]
+  Jeśli $y' = A(t)y + B(t)$, to rozwiązania są dane wzorem
+%
+  \begin{equation*}
+    y_0(t) = \int_{t_0}^t M(t,u) B(u) du,
+  \end{equation*}
+%
+  gdzie $M(t,u)$ jest macierzą rozwiązującą równania $y' = A(t)y$ taką, że $M(t,t) =~E$.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
