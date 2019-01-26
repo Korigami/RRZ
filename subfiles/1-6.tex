@@ -8,3 +8,47 @@
 \begin{lemma}
   $G$ jest całką pierwszą wtedy i tylko wtedy, gdy $\langle \nabla G, f \rangle \equiv 0$.
 \end{lemma}
+%
+\begin{definition}
+	\emph{Funkcją Lapunowa} nazywamy funkcję $L$ taką, że w warunku całki powyżej zastępujemy
+	$L(y(t)) = const$ przez $L(y(t))$ nierosnące. W terminach potoków ten warunek wyrażony jest przez 
+	$t_1 > t_2 \implies L(\phi^{t_1}(y_0)) \le L(\phi^{t_2}(y_0))$.
+\end{definition}
+%
+\begin{theorem}
+	%
+	Niech $y' = f(y)$, gdzie $f \in C^1(U)$, zaś $L$ jest funkcją Lapunowa na $U$, przy czym $L$ ma ścisłe minimum
+	globalne w $y_0 \in U$. Wtedy $y_0$ jest stabilnym (w sensie Lapunowa) położeniem równowagi.
+	%
+\end{theorem}
+%
+\begin{proof}
+	%
+	Pokażemy, że dla każdego $t \ge 0$ zachodzi $\phi^t(y_0) = y_0$. Jeśliby tak nie było, to dla pewnego $t > 0$
+	mielibyśmy $\phi(t)(y_0) \ne y_0$. Wtedy jednak $L(\phi^t(y_0)) > L(y_0) = \phi^{t_0}(y_0)$, co przeczyłoby, że
+	$L$ jest funkcją Lapunowa. Zatem $y_0$ jest położeniem równowagi.
+	
+	Pokażemy, że
+	%
+	\begin{equation*}
+	%
+	\forall_{\eps > 0} \, \exists_{\delta > 0} \, \forall_{t \ge 0} \, \norm{ y - y_0} \le \delta \land \phi^t(y_0) \,  istnieje  implies \norm{ \phi^t( y_0 ) - y_0 } \le \eps .
+	%
+	\end{equation*}
+	
+	Ustalmy $\eps > 0$. Bez straty ogólności załóżmy, że $\overline{B}(y_0, \eps) \subset U$ (jeśliby tak nie było, wystarczy 
+	wziąć mniejszy $\eps$) oraz $L(y_0) = 0$. Wtedy zbiór $\{ y \in U : \norm{ y - y_0 } = \eps \}$ jest zbiorem zwartym.
+	Wobec tego $\mu \coloneqq \inf\{ L(y) : \norm{ y - y_0 } = \eps \}$ jest przyjmowane w pewnym punkcie $y_{\min}$ oraz
+	$\mu = L(y_{\min}) > L(y_0) = 0$.
+	
+	Z ciągłości $L$ w 0 istnieje $\delta > 0$ taka, że jeśli $\norm{ y - y_0 } \le \delta$, to $L(y) > \mu$. Gdyby dla pewnego 
+	$t > 0$ zachodziło $\norm{ y - y_0 } \ge \eps$, to z własności Darboux istnieje $\tau \colon 0 \le \tau \le t$ takie, że 
+	$\norm{ \phi^\tau(y) - y_0 } = \eps$. Wtedy jednak $L(\phi^\tau(y)) \le \mu > L(y) = L(\phi^0(y))$, co jest sprzecznością
+	z założeniem, ze $L$ to funkcja Lapunowa. Otrzymujemy zatem, że dla każdego $t>0$ zachodzi $\norm{ y - y_0 } < \eps$.
+	
+	Pozostaje pokażać, że $\phi^t(y) = y(t)$ jest określone dla każdego $t \ge 0$. Jeśli $\alpha \ge 0$, to $y([0, \alpha]) \subset \overline{B}(y_0, \eps)$. Skoro $\overline{B}(y_0, \eps)$ jest zbiorem zwartym, to $y(t)$ przedłuża się na pewne
+	prawostronne otoczenie $\alpha$ z lematu o przedłużaniu prze koniec. Tym samym prawym końcem dziedziny rozwiązania
+	wysoconego $y(t)$ jest $+\infty$. 
+	%
+\end{proof}
+%
