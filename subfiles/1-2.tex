@@ -60,20 +60,35 @@ oraz zachodzi równość
   każdego $\l$ spełniającego ten warunek jest zbiorem zwartym, a ponadto $w_\l(t)$ zawiera się w tej dziedzinie dla 
   każdego $t \in I$. 
 
-  Z lematu \ref{L: Kluczowy} wiemy, że istnieją stałe $c_1, K_1 > 0$ takie, że
+%  
+  \begin{nestedlemma}
+    Przy założeniach takich jak powyżej, istnieją stałe $c_1, k_1 > 0$ takie, że
 %
-  \begin{equation*}
-    \abs{ \l - \l_0 } < c_1 \implies \norm[\big]{ w_\l(t) } \le K_1.
-  \end{equation*}
+    \begin{equation*}
+    \abs{ \l - \l_0 } \le c_1 \implies \norm[\big]{ w_\l(t) } \le k_1.
+    \end{equation*} 
+% 	 
+  \end{nestedlemma}
 %
-  Z kolei jeśli $\abs{ \l - \l_0 } \le \frac{ b }{ 2K_1 }$, to dla $w$ takich, że $\norm{ w } \le 2K_1$ zachodzi
+  \begin{nestedproof}
+  	Weźmy wpierw pewne $c_1 \colon 0 < c_1 < c$. Możemy zawęzić dziedzinę $f$ do $\l \in [\l_0 - c_1, \l + c_1]$. Wtedy $f$ jest funkcją klasy $C^1$ względem $\l$ zdefiniowaną na zbiorze zwartym (względem $\l$), a więc
+  	jest ona lipszycowska względem $\l$ ze stałą $L_\l$.  Weźmy $\l \ne \l_0$ z tego zbioru. Możemy zatem wziąć w \ref{L: Kluczowy} $\eps = L_\l \abs{\l - \l_0}$. Zgodnie z tym lematem, zachodzi wtedy:
+%
+	\begin{equation*}
+	  \norm{w_\l(t)} = \frac{ \norm[\big]{ y_\l(t) - y_{\l_0}(t) } }{\abs{ \l -\l_0}} \leq    L_\l \cdot e^{L \abs{t-t_0}} \cdot \abs{t-t_0} \eqqcolon k_1
+	\end{equation*}
+%
+    Dla tak zdefiniowanego $k_1$ teza lematu jest spełniona. (Uwaga: dla każdego $\l$ bierzemy inny $\eps$, ale wciąż uzyskujemy to samo ograniczenie dla $\norm{w_\l(t)}$). \qedhere
+  \end{nestedproof}
+%
+  Weźmy takie $c_1$ i $k_1$. Z kolei jeśli $\abs{ \l - \l_0 } \le \frac{ b }{ 2k_1 }$, to dla $w$ takich, że $\norm{ w } \le 2k_1$ zachodzi
 %
   \begin{equation*}
     \norm[\big]{ y_{\l_0}(t) + (\l - \l_0)w - y_{\l_0}(t) } = \norm[\big]{ (\l - \l_0)w  } = \abs{ \l - \l_0 } \cdot 
-    \norm{ w } \le \frac{ b }{ 2K_1 } \cdot 2K_1 = b.
+    \norm{ w } \le \frac{ b }{ 2k_1 } \cdot 2k_1 = b.
   \end{equation*}
 %
-  Oznacza to, że dla każdego $t \in J$ jest
+  Oznacza to, że dla każdego $t \in J$ (przy takich $\l$) jest
 %
   \begin{equation*}
     \p[\big]{ y_{\l_0}(t) + (\l - \l_0)w, t} \in R_b.
@@ -87,15 +102,15 @@ oraz zachodzi równość
 %
 Zdefiniujmy $F$ dla $\l = \l_0$ tak, by była ciągła względem $\l$ w tym punkcie. Wtedy
 %
-  \begin{align*}
+  \begin{align}
     \lim_{\l \to \l_0} F_\l(w, t) &= \lim_{\l \to \l_0} \frac{ f_\l\p[\big]{y_{\l_0}(t) + (\l - \l_0)w, t} -  
-    f_{\l_0} \p[\big]{y_{\l_0}(t), t} }{ \l - \l_0 } \\
+    f_{\l_0} \p[\big]{y_{\l_0}(t), t} }{ \l - \l_0 } \notag \\ 
     &=  \lim_{\l \to \l_0} \frac{ f_\l \p[\big]{y_{\l_0}(t) + (\l - \l_0)w, t} -  f_\l \p[\big]{y_{\l_0}(t), t} }{ w(\l 
-    - \l_0) } \cdot w \, + \\
-    &\qquad+ \lim_{\l \to \l_0} \frac{ f_\l\p[\big]{y_{\l_0}(t), t} - f_{\l_0} \p[\big]{y_{\l_0}(t)} }{ \l - \l_0 } \\
-    &= \pd{ y } f_{\l_0} (y, t) \big\vert_{ y = y_{\l_0}(t) } \cdot w + \pd{ \l } f_{\l}( y_{\l_0}(t), t) 
-    \big\vert_{ \l = \l_0 },
-  \end{align*}
+    - \l_0) } \cdot w \, + \notag \\
+    &\qquad+ \lim_{\l \to \l_0} \frac{ f_\l\p[\big]{y_{\l_0}(t), t} - f_{\l_0} \p[\big]{y_{\l_0}(t)} }{ \l - \l_0 } \notag \\
+    &= D_y \, f_{\l_0} (y, t) \big\vert_{ y = y_{\l_0}(t) } \cdot w + \pd{ \l } f_{\l}( y_{\l_0}(t), t) 
+    \big\vert_{ \l = \l_0 }, \label{eq: var}
+  \end{align}
 %
   przy czym powyższe pochodne istnieją, gdyż z założenia funkcja $f$ jest klasy $C^1$ względem zmiennych $y$ oraz $\l$. 
   Niech
@@ -121,38 +136,62 @@ Zdefiniujmy $F$ dla $\l = \l_0$ tak, by była ciągła względem $\l$ w tym punk
     Nadobowiązkowy dowód Czytelnik wykona samodzielnie.
   \end{nestedproof}
 %
-  Z powyższych rozważań oraz na mocy Twierdzenia Picarda-Lindelöfa, dla każdego $\l \in  (\l_0 - c^*, \l_0 + c^*)$ 
-  istnieje rozwiązanie powyższego równania różniczkowego, a także istnieje jednoznaczne rozwiązanie dla $\l = \l_0$ 
-  określone w pewnym przedziale $J \subset I$ (dla ustalenia uwagi, niech $J$ będzie maksymalnym możliwym). Co~więcej, 
-  z twierdzenia o ciągłej zależności mamy, że dla każdego ciągu $\l_n \to \l_0$ zachodzi $w_{\l_n}(t) \rightrightarrows 
-  w_{\l_0}(t)$. Stąd
+  Zauważmy, że na mocy powyższego lematu oraz poprzednich rozważań funkcja $F_{\l_0}(w, t)$ jest ciągłą funkcją określoną
+  na zbiorze zwartym, więc z Twierdzenia Peano istnieje rozwiązanie $w_{\l_0}$ równania $\pd{t} w = F_{\l_0}(w, t)$  określone w pewnym przedziale $J \subset I$ (dla ustalenia uwagi, niech $J$ będzie maksymalnym możliwym). 
+  
+  Rozwiązanie to jest jednoznaczne, gdyż dla każdego ciągu $\l_n \to \l_0$ zachodzi $w_{\l_n}(t) \rightrightarrows 
+  w_{\l_0}(t)$. Gdybyśmy mieli dwa ciągi $\l_{n_1}, \l_{n_2} \to \l_0$, dla których $w_{\l_{n_1}}(t) \to w_{\l_0, 1}(t)$ oraz 
+  $w_{\l_{n_2}}(t) \to w_{\l_0, 2}(t)$, to ciąg $\l_{n}$ z wyrazami na przemian z $\l_{n_1}$ i $\l_{n_2}$ również byłby zbieżny do $\l_0$, więc $w_{\l_{n}}$ także byłby zbieżny do jakiegoś rozwiązania. To zaś z jednoznaczności granicy oznacza, że $w_{\l_{n_1}}(t) = w_{\l_{n_2}}(t)$ dla każdego $t$. Stąd:
 %
   \begin{equation*}
     w_{\l_0}(t) = \lim_{n \to \infty} w_{\l_n}(t) = \lim_{\l \to \l_0} w_{\l}(t) = \lim_{\l \to \l_0} \frac{ y_\l(t) - 
-    y_{\l_0}(t) }{ \l - \l_0 } = \pd{ \l } y_\l(t) \big\vert_{ \l = \l_0 }.
+  	y_{\l_0}(t) }{ \l - \l_0 } = \pd{ \l } y_\l(t) \big\vert_{ \l = \l_0 }.
   \end{equation*}
 %
-  Zatem $w_{\l_0}$ jest szukaną funkcją $z$ z tezy twierdzenia.
-
-Równość w twierdzeniu zachodzi, gdyż
+  
+  Ponadto $ J = I $. Przypuśćmy przeciwnie, że tak nie jest i bez straty ogólności załóżmy, że $\alpha$ jest prawym
+  krańcem $J$, ale nie $I$. Skoro $F_{\l_0}$ spełnia założenia \ref{T: CZoP}, to jest ciągła i lipszycowska względem $w_{\l_0}$, a więc też jest lokalnie lipszycowska. Skoro $\norm{ w_\l(t) } \le k_1$, to po przejściu z nierównością do granicy także $\norm{ w_{\l_0}(t) } \le k_1$. Wreszcie $w_{\l_0}$ jest funkcją ciągłą, więc istnieje pewne otoczenie $U_\alpha$ punktu $\alpha$, dla
+  którego $ t \in U_\alpha \implies \norm{ w_\l(t) } \le 2k_1$, więc istnieje zbiór zwarty $K$ oraz $\delta > 0$ takie, że 
 %
+  \begin{equation*}
+    \forall t\in Dm w_{\l_0} \cap [\alpha - \delta, \alpha + \delta] \quad \big( w_{\l_0}(t), t \big) \in K.
+  \end{equation*}
+%
+  Zatem z \ref{T: TOPK} $w_{\l_0}$ rozszerza się na przedział zawierajacy $\alpha$ we wnętrzu, co przeczyłoby maksymalności $J$.
+  
+  Na mocy powyższych rozważań $w_{\l_0}$ jest szukaną funkcją $z$ z tezy twierdzenia. Równość w twierdzeniu zachodzi, gdyż
+%  
   \begin{align*}
-    \pd{t} w_{\l_0}(t) &= \pd{t} \lim_{\l \to \l_0}  \frac{ y_\l(t) - y_{\l_0}(t) }{ \l - \l_0 } \\ &= \pd{t} \lim_{n 
-    \to 
-    \infty}
-    \frac{ y_{\l_n}(t) - y_{\l_0}(t) }{ \l_n - \l_0 } \\
-    &= \lim_{n \to \infty} \frac{  \pd{t} y_{\l_n}(t) -  \pd{t} y_{\l_0}(t) }{ \l_n - \l_0 } \\ &= \lim_{\l \to \l_0} 
-    \frac{  
-    \pd{t} y_{\l_n}(t) -  \pd{t} y_{\l_0}(t) }{ \l_n - \l_0 }
-    = \pd{\l } \pd{t} y_\l (t) \big\vert_{ \l = \l_0 }.
-  \end{align*}
+  	F_{\l_0}(w, t) = \pd{t} w_{\l_0}(t) = \pd{t} \pd{\l} y_\l(t) \Big\vert_{ \l = \l_0 } \overset{(\star)}{ = } 
+  	\pd{\l} \pd{t} y_\l(t) \Big\vert_{ \l = \l_0 } = \pd{\l} f_\l(y_\l, t) \Big\vert_{ \l = \l_0 },
+  \end{align*} 
 %
-  Czyli istotnie $\pd{t} w_{\l_0}(t) = \pd{\l } \pd{t} y_\l (t) \big\vert_{ \l = \l_0 }$.
+  gdzie równość $(\star)$ zachodzi na mocy Twierdzenia Schwarza, gdyż $F_{\l_0}(w, t)$ jest ciągła (spełnia \ref{T: CZoP}) i
+  $f$ jest $C^1$ względem $y$ i $\l$ z założenia. Czyli istotnie $\pd{t} w_{\l_0}(t) = \pd{\l } \pd{t} y_\l (t) \big\vert_{ \l = \l_0 }$.
+  
+  Wreszcie, poprzez podstawienie $w = w_{\l_0}(t)$ w \eqref{eq: var} otrzymujemy tzw. równanie na wariację:
+%
+  \begin{equation*}
+  	\pd{t} w_{\l_0}(t) =  D_y \, f_{\l_0} (y, t) \big\vert_{ y = y_{\l_0}(t) } \cdot w_{\l_0}(t) + \pd{ \l } f_{\l}( y_{\l_0}(t), t) 
+  	\big\vert_{ \l = \l_0 }.
+  \end{equation*} 
+%
+  Czyli twierdzenie jest w pełni udowodnione. \qedhere
 \end{proof}
 
+%
 
-
-
+%  \begin{align*}
+%\pd{t} w_{\l_0}(t) &= \pd{t} \lim_{\l \to \l_0}  \frac{ y_\l(t) - y_{\l_0}(t) }{ \l - \l_0 } \\ &= \pd{t} \lim_{n 
+%	\to 
+%	\infty}
+%\frac{ y_{\l_n}(t) - y_{\l_0}(t) }{ \l_n - \l_0 } \\
+%&= \lim_{n \to \infty} \frac{  \pd{t} y_{\l_n}(t) -  \pd{t} y_{\l_0}(t) }{ \l_n - \l_0 } \\ &= \lim_{\l \to \l_0} 
+%\frac{  
+%	\pd{t} y_{\l_n}(t) -  \pd{t} y_{\l_0}(t) }{ \l_n - \l_0 }
+%= \pd{\l } \pd{t} y_\l (t) \big\vert_{ \l = \l_0 }.
+%\end{align*}
+%
 
 
 
