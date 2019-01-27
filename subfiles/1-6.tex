@@ -42,9 +42,9 @@
 	$\mu = L(y_{\min}) > L(y_0) = 0$.
 	
 	Z ciągłości $L$ w 0 istnieje $\delta > 0$ taka, że jeśli $\norm{ y - y_0 } \le \delta$, to $L(y) > \mu$. Gdyby dla pewnego 
-	$t > 0$ zachodziło $\norm{ y - y_0 } \ge \eps$, to z własności Darboux istnieje $\tau \colon 0 \le \tau \le t$ takie, że 
-	$\norm{ \phi^\tau(y) - y_0 } = \eps$. Wtedy jednak $L(\phi^\tau(y)) \le \mu > L(y) = L(\phi^0(y))$, co jest sprzecznością
-	z założeniem, ze $L$ to funkcja Lapunowa. Otrzymujemy zatem, że dla każdego $t>0$ zachodzi $\norm{ y - y_0 } < \eps$.
+	$t > 0$ zachodziło $\norm{ \phi^t(y) - y_0 } \ge \eps$, to z własności Darboux istnieje $\tau \in [0, t]$ takie, że 
+	$\norm{ \phi^\tau(y) - y_0 } = \eps$. Wtedy jednak $L(\phi^\tau(y)) \ge \mu > L(y) = L(\phi^0(y))$, co jest sprzecznością
+	z założeniem, ze $L$ to funkcja Lapunowa. Otrzymujemy zatem, że dla każdego $t>0$ zachodzi $\norm{ \phi^t(y) - y_0 } < \eps$.
 	
 	Pozostaje pokażać, że $\phi^t(y) = y(t)$ jest określone dla każdego $t \ge 0$. Jeśli $\alpha \ge 0$, to $y([0, \alpha]) \subset \overline{B}(y_0, \eps)$. Skoro $\overline{B}(y_0, \eps)$ jest zbiorem zwartym, to $y(t)$ przedłuża się na pewne
 	prawostronne otoczenie $\alpha$ z lematu o przedłużaniu prze koniec. Tym samym prawym końcem dziedziny rozwiązania
