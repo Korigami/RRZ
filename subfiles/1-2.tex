@@ -162,12 +162,11 @@ Zdefiniujmy $F$ dla $\l = \l_0$ tak, by była ciągła względem $\l$ w tym punk
   Na mocy powyższych rozważań $w_{\l_0}$ jest szukaną funkcją $z$ z tezy twierdzenia. Równość w twierdzeniu zachodzi, gdyż
 %  
   \begin{align*}
-  	F_{\l_0}(w, t) = \pd{t} w_{\l_0}(t) = \pd{t} \pd{\l} y_\l(t) \Big\vert_{ \l = \l_0 } \overset{(\star)}{ = } 
-  	\pd{\l} \pd{t} y_\l(t) \Big\vert_{ \l = \l_0 } = \pd{\l} f_\l(y_\l, t) \Big\vert_{ \l = \l_0 },
+  	\pd{\l} \pd{t} y_\l(t) \, \big\vert_{\l = \l_0} &= \lim_{\l \to \l_0} \frac{ \pd{t} y_\l(t) - \pd{t} y_{\l_0}(t) }{ \l - \l_0 } = \lim_{\l \to \l_0} F_\l(w_\l(t), t) = \\
+  	& \overset{(\star)}{ = } F_{\l_0}(w_{\l_0}(t), t) = \pd{t} w_{\l_0}(t) = \pd{t} \pd{\l} y_\l(t) \, \big\vert_{\l = \l_0}
   \end{align*} 
 %
-  gdzie równość $(\star)$ zachodzi na mocy Twierdzenia Schwarza, gdyż $F_{\l_0}(w, t)$ jest ciągła (spełnia \ref{T: CZoP}) i
-  $f$ jest $C^1$ względem $y$ i $\l$ z założenia. Czyli istotnie $\pd{t} w_{\l_0}(t) = \pd{\l } \pd{t} y_\l (t) \big\vert_{ \l = \l_0 }$.
+  gdzie równość $(\star)$ zachodzi gdyż $F_\l(w, t)$ jest ciągła względem $w$ i $\l$, ponieważ spełnia założenia \ref{T: CZoP}, a $w_\l(t)$ ciągła względem $\l$ w punkcie $\l_0$.
   
   Wreszcie, poprzez podstawienie $w = w_{\l_0}(t)$ w \eqref{eq: var} otrzymujemy tzw. równanie na wariację:
 %
